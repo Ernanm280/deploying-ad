@@ -36,12 +36,10 @@ This repository contains instructions and configurations for deploying an on-pre
     - Username: `mydomain.com\`
 
 
-<img width="830" alt="Screenshot 2025-01-23 at 3 39 35 PM" src="https://github.com/user-attachments/assets/4e576c4c-b6dd-4aa6-bf85-6070571682bf" />
-<img width="671" alt="Screenshot 2025-01-23 at 3 39 41 PM" src="https://github.com/user-attachments/assets/3d8b8ec4-0942-4669-91e5-20bad33d35a5" />
-<img width="1223" alt="Screenshot 2025-01-23 at 3 40 40 PM" src="https://github.com/user-attachments/assets/f4febafe-d041-48c5-a1e3-6f2f18458b75" />
-<img width="571" alt="Screenshot 2025-01-23 at 3 40 54 PM" src="https://github.com/user-attachments/assets/55020542-5ab2-4d7e-8b18-2307480e6dc0" />
-<img width="421" alt="Screenshot 2025-01-23 at 3 42 14 PM" src="https://github.com/user-attachments/assets/1378c546-4afc-4e90-891e-c95eea98e73e" />
-
+<img width="1089" height="824" alt="Screenshot 2026-03-02 210042" src="https://github.com/user-attachments/assets/0de730d9-7a32-4cf1-9fb4-398f2f52bc1a" />
+<img width="423" height="333" alt="Screenshot 2026-03-02 210652" src="https://github.com/user-attachments/assets/8383e064-d1bd-4777-9135-028ae0059ade" />
+<img width="750" height="551" alt="Screenshot 2026-03-02 210910" src="https://github.com/user-attachments/assets/ea0b0ac9-9052-47d3-9f51-2f6a5c38eaa8" />
+<img width="917" height="493" alt="Screenshot 2026-03-02 211626" src="https://github.com/user-attachments/assets/20a42488-cfc1-498c-a9bb-eb59218ae48d" />
 
 **2. Create a Domain Admin User**
 - Open Active Directory Users and Computers (ADUC)
@@ -61,13 +59,14 @@ This repository contains instructions and configurations for deploying an on-pre
   - Use `jane_admin` as the admin account from this point forward.
 
 
-<img width="692" alt="Screenshot 2025-01-23 at 3 45 08 PM" src="https://github.com/user-attachments/assets/52a900c0-8050-413f-a57b-39d41995e8e1" />
-<img width="684" alt="Screenshot 2025-01-23 at 3 45 28 PM" src="https://github.com/user-attachments/assets/d756cefa-8fee-43ff-83aa-949763c18fdb" />
-<img width="664" alt="Screenshot 2025-01-23 at 3 45 52 PM" src="https://github.com/user-attachments/assets/b6c24ef3-1556-4afd-9721-bdca545410e5" />
-<img width="1335" alt="Screenshot 2025-01-23 at 3 46 19 PM" src="https://github.com/user-attachments/assets/9fc14a7e-9c00-42b5-9fbf-d268e6fe78f3" />
-<img width="651" alt="Screenshot 2025-01-23 at 3 46 30 PM" src="https://github.com/user-attachments/assets/ef0c6e97-061e-4331-8cd3-462490184e8d" />
-<img width="406" alt="Screenshot 2025-01-23 at 3 47 10 PM" src="https://github.com/user-attachments/assets/801c5acf-9a74-4240-a73c-de9353dfc8e0" />
-<img width="533" alt="Screenshot 2025-01-23 at 3 47 30 PM" src="https://github.com/user-attachments/assets/fe2e062a-080e-4259-87f6-289556859abc" />
+<img width="596" height="524" alt="Screenshot 2026-03-02 212915" src="https://github.com/user-attachments/assets/cd9e9150-f753-4118-82d8-2a0b83614fcb" />
+<img width="432" height="366" alt="Screenshot 2026-03-02 212943" src="https://github.com/user-attachments/assets/0add7745-76f8-4704-86a9-67460dcc71a4" />
+<img width="429" height="370" alt="Screenshot 2026-03-02 213020" src="https://github.com/user-attachments/assets/e613931c-6d8d-4fc6-bfda-d5e98dfda6c1" />
+<img width="569" height="476" alt="Screenshot 2026-03-02 213255" src="https://github.com/user-attachments/assets/3eb853bf-aef8-40b1-be9d-bce5f8d61133" />
+<img width="432" height="371" alt="Screenshot 2026-03-02 213358" src="https://github.com/user-attachments/assets/f7ba0b42-a954-4db2-a394-9dd5d66a6645" />
+<img width="498" height="355" alt="Screenshot 2026-03-02 213609" src="https://github.com/user-attachments/assets/79e30c97-f453-480b-b5e1-605d84cee3a2" />
+<img width="450" height="295" alt="Screenshot 2026-03-02 214311" src="https://github.com/user-attachments/assets/b29699a9-0154-42ef-bfb6-fc113d7b9148" />
+<img width="383" height="223" alt="Screenshot 2026-03-02 214344" src="https://github.com/user-attachments/assets/7d4c0f40-4adb-4d70-8d84-c16ff30b4f33" />
 
 
  
