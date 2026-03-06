@@ -22,9 +22,8 @@ This repository contains instructions and configurations for deploying an on-pre
 <h2>Deployment and Configuration Steps</h2>
 
 **1. Install Active Directory**
-
+---
 ### Login to DC-1
-
 Connect to the **DC-1 Virtual Machine** using Remote Desktop.
 
 **Credentials**
@@ -33,19 +32,17 @@ Connect to the **DC-1 Virtual Machine** using Remote Desktop.
 * **Password:** *your password*
 
 ### Install Active Directory Domain Services
-
 1. Open **Server Manager**.
 2. Click **Add Roles and Features**.
 3. Select **Active Directory Domain Services (AD DS)**.
 4. Complete the installation.
 
 ### Promote Server to Domain Controller
-
 1. In **Server Manager**, click the **notification flag**.
 2. Select **Promote this server to a domain controller**.
 3. Choose **Add a new forest**.
 4. Enter the domain name:
-
+   
 ```
 mydomain.com
 ```
@@ -53,33 +50,44 @@ mydomain.com
 5. Complete the setup and allow the server to **restart**.
 
 ### Login Using Domain Account
-
 After the restart, log back into **DC-1**.
 
 * **Username:** `mydomain.com\Administrator`
 * **Password:** *your password*
 
-### Screenshotsimg width="423" height="333" alt="Screenshot 2026-03-02 210652" src="https://github.com/user-attachments/assets/8383e064-d1bd-4777-9135-028ae0059ade" />
+<img width="423" height="333" alt="Screenshot 2026-03-02 210652" src="https://github.com/user-attachments/assets/8383e064-d1bd-4777-9135-028ae0059ade" />
 <img width="750" height="551" alt="Screenshot 2026-03-02 210910" src="https://github.com/user-attachments/assets/ea0b0ac9-9052-47d3-9f51-2f6a5c38eaa8" />
 <img width="917" height="493" alt="Screenshot 2026-03-02 211626" src="https://github.com/user-attachments/assets/20a42488-cfc1-498c-a9bb-eb59218ae48d" />
 
 **2. Create a Domain Admin User**
-- Open Active Directory Users and Computers (ADUC)
-- Create Organizational Units (OUs)
-  - Create an OU named `_EMPLOYEES`.
-  - Create another OU named `_ADMINS`.
-- Create a New Employee User
-  - Add a user named "Jane Doe" with the following details:
-    - Username: `jane_admin`
-    - Password: `Cyberlab123!`
-- Add User to Security Group
-  - Add `jane_admin` to the Domain Admins Security Group.
-- Log in as `jane_admin`
-  - Log out from `DC-1` and log back in using:
-    - Username: `mydomain.com\jane_admin`
-    - Password: `Cyberlab123!`
-  - Use `jane_admin` as the admin account from this point forward.
+---
+### Open Active Directory Users and Computers
+On **DC-1**, open **Active Directory Users and Computers (ADUC)**.
 
+### Create Organizational Units
+Create two Organizational Units (OUs):
+* `_EMPLOYEES`
+* `_ADMINS`
+
+### Create a New User
+
+Create a user with the following details:
+* **Name:** Jane Doe
+* **Username:** `jane_admin`
+* **Password:** `Cyberlab123!`
+
+Place the user in the **_ADMINS** OU.
+
+### Add User to Domain Admins
+Add `jane_admin` to the **Domain Admins** security group.
+
+### Log in as jane_admin
+Log out of **DC-1** and log back in using:
+
+* **Username:** `mydomain.com\jane_admin`
+* **Password:** `Cyberlab123!`
+
+Use **jane_admin** as the admin account for the rest of the lab.
 
 <img width="596" height="524" alt="Screenshot 2026-03-02 212915" src="https://github.com/user-attachments/assets/cd9e9150-f753-4118-82d8-2a0b83614fcb" />
 <img width="432" height="366" alt="Screenshot 2026-03-02 212943" src="https://github.com/user-attachments/assets/0add7745-76f8-4704-86a9-67460dcc71a4" />
@@ -91,18 +99,22 @@ After the restart, log back into **DC-1**.
 <img width="383" height="223" alt="Screenshot 2026-03-02 214344" src="https://github.com/user-attachments/assets/7d4c0f40-4adb-4d70-8d84-c16ff30b4f33" />
 
 
- 
-**3. Join `Client-1` to the Domain**
-- Login to `Client-1` as Local Admin
-- Join `Client-1` to the Domain
-  - Change the system properties to join the domain `mydomain.com.`
-  - Restart `Client-1` after joining.
-- Verify in ADUC
-  - Log in to `DC-1` and confirm that `Client-1` appears in the Active Directory Users and Computers tool.
-- Organize `Client-1` in ADUC
-  - Create an OU named `_CLIENTS`.
-  - Drag `Client-1` into the `_CLIENTS OU`.
+ **3. Join Client-1 to the Domain**
+---
+### Login to Client-1
+Log in to **Client-1** using the **local administrator account**.
 
+Open **System Properties** and join the computer to the domain:
+`mydomain.com`
+
+Restart **Client-1** after joining the domain.
+
+### Verify in Active Directory
+Log in to **DC-1** and open **Active Directory Users and Computers (ADUC)** to confirm that **Client-1** appears in the domain.
+
+### Organize Client-1
+Create a new Organizational Unit named `_CLIENTS` and move **Client-1** into it.
+ 
 
 <img width="921" alt="Screenshot 2025-01-23 at 3 50 00 PM" src="https://github.com/user-attachments/assets/bed85172-e5dc-4956-8762-eea8e07e5ade" />
 <img width="426" alt="Screenshot 2025-01-23 at 3 50 17 PM" src="https://github.com/user-attachments/assets/47790e14-d7f2-4b27-bb08-b062aacbdca9" />
@@ -115,16 +127,24 @@ After the restart, log back into **DC-1**.
 
 
 **4. Setup Remote Desktop for Non-Administrative Users on Client-1**
+---
 
-- Login to `Client-1` as `mydomain.com\jane_admin`
-  - Use the credentials for `jane_admin`.
-- Allow Domain Users Access to Remote Desktop
-  - Open system properties.
-  - Click on "Remote Desktop."
-  - Allow "domain users" access to Remote Desktop.
-- Test Remote Desktop Access
-  - You can now log into `Client-1` as a normal, non-administrative user.
-   -Note: Typically, this configuration is managed using Group Policy for multiple systems.
+### Login to Client-1
+
+Log in to **Client-1** using the domain admin account:
+
+* **Username:** `mydomain.com\jane_admin`
+* **Password:** `Cyberlab123!`
+
+### Enable Remote Desktop Access
+1. Open **System Properties**.
+2. Select the **Remote Desktop** tab.
+3. Allow **Domain Users** access to Remote Desktop.
+
+### Test Remote Access
+
+You can now log in to **Client-1** using a **non-administrative domain user**.
+Note: In production environments, this is typically configured using Group Policy.
 
 
 <img width="454" alt="Screenshot 2025-01-23 at 4 05 59 PM" src="https://github.com/user-attachments/assets/665b22bd-58b9-4127-a7f6-8667cb8e7b4c" />
@@ -134,20 +154,31 @@ After the restart, log back into **DC-1**.
 
 
 **5. Create Additional Users and Test Login**
+Here’s a **clean, simple, and concise version** that fits the style of your other sections:
 
-- Login to `DC-1` as `jane_admin`
-  - Use the credentials for `jane_admin`.
-- Open PowerShell ISE as Administrator
-  - Launch PowerShell ISE with administrative privileges.
-- Create Users with a Script
-  - Create a new file and paste the provided [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) into it.
-  - Run the script to create multiple user accounts.
-- Verify Accounts in ADUC
-  - Open Active Directory Users and Computers (ADUC).
-  - Observe the newly created accounts in the `_EMPLOYEES OU`.
-- Test Login
-  - Attempt to log into `Client-1` using one of the newly created accounts.
-  - Ensure the account password matches what is specified in the script.
+---
+
+## 5. Create Multiple Users with a Script
+
+### Login to DC-1
+
+Log in to **DC-1** using the domain admin account:
+
+* **Username:** `mydomain.com\jane_admin`
+
+### Run the PowerShell Script
+
+1. Open **PowerShell ISE** as **Administrator**.
+2. Create a new file and paste the provided script.
+3. Run the script to generate multiple user accounts. [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)
+
+### Verify Accounts
+
+Open **Active Directory Users and Computers (ADUC)** and confirm the new accounts appear in the `_EMPLOYEES` OU.
+
+### Test Login
+
+Attempt to log in to **Client-1** using one of the newly created user accounts. Ensure the password matches the one defined in the script.
 
 
 <img width="463" alt="Screenshot 2025-01-23 at 4 08 49 PM" src="https://github.com/user-attachments/assets/baaf9830-96e3-41ac-83d4-3d921678e598" />
