@@ -22,21 +22,44 @@ This repository contains instructions and configurations for deploying an on-pre
 <h2>Deployment and Configuration Steps</h2>
 
 **1. Install Active Directory**
-- Login to `DC-1`
-  - Use the credentials:
-    - Username: 
-    - Password: 
-- Install Active Directory Domain Services
-  - Open Server Manager and install the Active Directory Domain Services role.
-- Promote as a Domain Controller
-  - Set up a new forest with the domain name `mydomain.com` (or any preferred name).
-  - Restart the server after promotion.
-- Login to `DC-1` as Domain User
-  - Use the credentials:
-    - Username: `mydomain.com\`
 
+### Login to DC-1
 
-<img width="1089" height="824" alt="Screenshot 2026-03-02 210042" src="https://github.com/user-attachments/assets/0de730d9-7a32-4cf1-9fb4-398f2f52bc1a" />
+Connect to the **DC-1 Virtual Machine** using Remote Desktop.
+
+**Credentials**
+
+* **Username:** `Administrator`
+* **Password:** *your password*
+
+### Install Active Directory Domain Services
+
+1. Open **Server Manager**.
+2. Click **Add Roles and Features**.
+3. Select **Active Directory Domain Services (AD DS)**.
+4. Complete the installation.
+
+### Promote Server to Domain Controller
+
+1. In **Server Manager**, click the **notification flag**.
+2. Select **Promote this server to a domain controller**.
+3. Choose **Add a new forest**.
+4. Enter the domain name:
+
+```
+mydomain.com
+```
+
+5. Complete the setup and allow the server to **restart**.
+
+### Login Using Domain Account
+
+After the restart, log back into **DC-1**.
+
+* **Username:** `mydomain.com\Administrator`
+* **Password:** *your password*
+
+### Screenshots<img width="1089" height="824" alt="Screenshot 2026-03-02 210042" src="https://github.com/user-attachments/assets/0de730d9-7a32-4cf1-9fb4-398f2f52bc1a" />
 <img width="423" height="333" alt="Screenshot 2026-03-02 210652" src="https://github.com/user-attachments/assets/8383e064-d1bd-4777-9135-028ae0059ade" />
 <img width="750" height="551" alt="Screenshot 2026-03-02 210910" src="https://github.com/user-attachments/assets/ea0b0ac9-9052-47d3-9f51-2f6a5c38eaa8" />
 <img width="917" height="493" alt="Screenshot 2026-03-02 211626" src="https://github.com/user-attachments/assets/20a42488-cfc1-498c-a9bb-eb59218ae48d" />
