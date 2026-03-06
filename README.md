@@ -59,8 +59,7 @@ After the restart, log back into **DC-1**.
 * **Username:** `mydomain.com\Administrator`
 * **Password:** *your password*
 
-### Screenshots<img width="1089" height="824" alt="Screenshot 2026-03-02 210042" src="https://github.com/user-attachments/assets/0de730d9-7a32-4cf1-9fb4-398f2f52bc1a" />
-<img width="423" height="333" alt="Screenshot 2026-03-02 210652" src="https://github.com/user-attachments/assets/8383e064-d1bd-4777-9135-028ae0059ade" />
+### Screenshotsimg width="423" height="333" alt="Screenshot 2026-03-02 210652" src="https://github.com/user-attachments/assets/8383e064-d1bd-4777-9135-028ae0059ade" />
 <img width="750" height="551" alt="Screenshot 2026-03-02 210910" src="https://github.com/user-attachments/assets/ea0b0ac9-9052-47d3-9f51-2f6a5c38eaa8" />
 <img width="917" height="493" alt="Screenshot 2026-03-02 211626" src="https://github.com/user-attachments/assets/20a42488-cfc1-498c-a9bb-eb59218ae48d" />
 
