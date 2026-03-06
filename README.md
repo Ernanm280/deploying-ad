@@ -104,16 +104,18 @@ Use **jane_admin** as the admin account for the rest of the lab.
 ### Login to Client-1
 Log in to **Client-1** using the **local administrator account**.
 
-Open **System Properties** and join the computer to the domain:
+- Open **System Properties** and join the computer to the domain:
 `mydomain.com`
 
-Restart **Client-1** after joining the domain.
+- Restart **Client-1** after joining the domain.
 
 ### Verify in Active Directory
-Log in to **DC-1** and open **Active Directory Users and Computers (ADUC)** to confirm that **Client-1** appears in the domain.
+
+- Log in to **DC-1** and open **Active Directory Users and Computers (ADUC)** to confirm that **Client-1** appears in the domain.
 
 ### Organize Client-1
-Create a new Organizational Unit named `_CLIENTS` and move **Client-1** into it.
+
+- Create a new Organizational Unit named `_CLIENTS` and move **Client-1** into it.
  
 
 <img width="921" alt="Screenshot 2025-01-23 at 3 50 00 PM" src="https://github.com/user-attachments/assets/bed85172-e5dc-4956-8762-eea8e07e5ade" />
@@ -192,5 +194,5 @@ Attempt to log in to **Client-1** using one of the newly created user accounts. 
 
 
 <h2>Purpose</h2>
-The purpose of this repository is to provide a comprehensive guide for deploying Active Directory through virtual machines on Azure. This implementation is intended to replicate on-premises infrastructure within a cloud environment, enabling scalable and manageable domain services for various organizational needs.
+This repository documents the deployment of an Active Directory environment in Microsoft Azure using Virtual Machines. The project demonstrates core domain services, including domain controller configuration, user management, and client domain joining.
 
