@@ -55,11 +55,13 @@ After the restart, log back into **DC-1**.
 * **Username:** `mydomain.com\Administrator`
 * **Password:** *your password*
 
-<img width="423" height="333" alt="Screenshot 2026-03-02 210652" src="https://github.com/user-attachments/assets/8383e064-d1bd-4777-9135-028ae0059ade" />
-<img width="750" height="551" alt="Screenshot 2026-03-02 210910" src="https://github.com/user-attachments/assets/ea0b0ac9-9052-47d3-9f51-2f6a5c38eaa8" />
-<img width="917" height="493" alt="Screenshot 2026-03-02 211626" src="https://github.com/user-attachments/assets/20a42488-cfc1-498c-a9bb-eb59218ae48d" />
+<img width="400" height="302" alt="image" src="https://github.com/user-attachments/assets/bff6471c-e00d-4c9b-881a-2abe50f420ec" />
+<img width="400" height="315" alt="image" src="https://github.com/user-attachments/assets/f4241cbc-4f99-4b34-b527-1a5f17d1909a" />
+<img width="400" height="294" alt="image" src="https://github.com/user-attachments/assets/eafdc315-a35a-417a-9473-5a16a442b7e2" />
+<img width="256" height="223" alt="image" src="https://github.com/user-attachments/assets/8b735bf4-8a0d-4d52-a058-73e99ebbdc65" />
 
-**2. Create a Domain Admin User**
+
+*2. Create a Domain Admin User*
 ---
 ### Open Active Directory Users and Computers
 On **DC-1**, open **Active Directory Users and Computers (ADUC)**.
@@ -74,7 +76,7 @@ Create two Organizational Units (OUs):
 Create a user with the following details:
 * **Name:** Jane Doe
 * **Username:** `jane_admin`
-* **Password:** `Cyberlab123!`
+* **Password:** `Passsword1`
 
 Place the user in the **_ADMINS** OU.
 
@@ -85,18 +87,16 @@ Add `jane_admin` to the **Domain Admins** security group.
 Log out of **DC-1** and log back in using:
 
 * **Username:** `mydomain.com\jane_admin`
-* **Password:** `Cyberlab123!`
+* **Password:** `Password1`
 
 Use **jane_admin** as the admin account for the rest of the lab.
 
-<img width="596" height="524" alt="Screenshot 2026-03-02 212915" src="https://github.com/user-attachments/assets/cd9e9150-f753-4118-82d8-2a0b83614fcb" />
-<img width="432" height="366" alt="Screenshot 2026-03-02 212943" src="https://github.com/user-attachments/assets/0add7745-76f8-4704-86a9-67460dcc71a4" />
-<img width="429" height="370" alt="Screenshot 2026-03-02 213020" src="https://github.com/user-attachments/assets/e613931c-6d8d-4fc6-bfda-d5e98dfda6c1" />
-<img width="569" height="476" alt="Screenshot 2026-03-02 213255" src="https://github.com/user-attachments/assets/3eb853bf-aef8-40b1-be9d-bce5f8d61133" />
-<img width="432" height="371" alt="Screenshot 2026-03-02 213358" src="https://github.com/user-attachments/assets/f7ba0b42-a954-4db2-a394-9dd5d66a6645" />
-<img width="498" height="355" alt="Screenshot 2026-03-02 213609" src="https://github.com/user-attachments/assets/79e30c97-f453-480b-b5e1-605d84cee3a2" />
-<img width="450" height="295" alt="Screenshot 2026-03-02 214311" src="https://github.com/user-attachments/assets/b29699a9-0154-42ef-bfb6-fc113d7b9148" />
-<img width="383" height="223" alt="Screenshot 2026-03-02 214344" src="https://github.com/user-attachments/assets/7d4c0f40-4adb-4d70-8d84-c16ff30b4f33" />
+<img width="256" height="225" alt="image" src="https://github.com/user-attachments/assets/dab997bd-f6e4-471b-a803-860dcd3677f7" />
+<img width="256" height="217" alt="image" src="https://github.com/user-attachments/assets/52a74f62-e005-47dd-aabf-085c5f35f4b2" />
+<img width="256" height="221" alt="image" src="https://github.com/user-attachments/assets/d162292a-7797-4d72-a3c0-5f371523eb2e" />
+<img width="256" height="214" alt="image" src="https://github.com/user-attachments/assets/9f9e9cb6-395a-43ac-b38e-631ec7748ded" />
+<img width="256" height="220" alt="image" src="https://github.com/user-attachments/assets/85ef7de0-8a76-477c-8a0d-17d48057460d" />
+<img width="256" height="182" alt="image" src="https://github.com/user-attachments/assets/a899c185-0d11-4bab-9c64-5f291ec873b3" />
 
 
  **3. Join Client-1 to the Domain**
@@ -117,15 +117,12 @@ Log in to **Client-1** using the **local administrator account**.
 
 - Create a new Organizational Unit named `_CLIENTS` and move **Client-1** into it.
  
-
-<img width="921" alt="Screenshot 2025-01-23 at 3 50 00 PM" src="https://github.com/user-attachments/assets/bed85172-e5dc-4956-8762-eea8e07e5ade" />
-<img width="426" alt="Screenshot 2025-01-23 at 3 50 17 PM" src="https://github.com/user-attachments/assets/47790e14-d7f2-4b27-bb08-b062aacbdca9" />
-<img width="421" alt="Screenshot 2025-01-23 at 3 51 12 PM" src="https://github.com/user-attachments/assets/1c0b9cad-2fc9-4446-babe-8ec74a4ffe5a" />
-<img width="277" alt="Screenshot 2025-01-23 at 3 51 25 PM" src="https://github.com/user-attachments/assets/02f62ad7-c3b6-4674-a8af-4c7d9411bc76" />
-<img width="629" alt="Screenshot 2025-01-23 at 3 52 24 PM" src="https://github.com/user-attachments/assets/62af8808-9966-4ab2-a3f2-7138c65dd800" />
-<img width="574" alt="Screenshot 2025-01-23 at 3 52 30 PM" src="https://github.com/user-attachments/assets/17e0e492-2047-4d5d-a6cc-459c507ca1f8" />
-<img width="607" alt="Screenshot 2025-01-23 at 3 52 44 PM" src="https://github.com/user-attachments/assets/c83ed5c1-fb69-48a3-b49c-96e2a50232ba" />
-<img width="728" alt="Screenshot 2025-01-23 at 3 53 02 PM" src="https://github.com/user-attachments/assets/f65d3964-2fec-47a2-a0c3-0b89f123f734" />
+<img width="233" height="256" alt="image" src="https://github.com/user-attachments/assets/bf3b60b6-f5f7-4754-a248-41da9bd4a37f" />
+<img width="228" height="256" alt="image" src="https://github.com/user-attachments/assets/5efac0fd-df7f-4945-bcd5-92de8dd486c8" />
+<img width="400" height="262" alt="image" src="https://github.com/user-attachments/assets/65ec0fa3-ba4e-467a-bea5-1fee213f8042" />
+<img width="383" height="223" alt="image" src="https://github.com/user-attachments/assets/ac2e7a69-5a7d-4841-ac4c-cda18da4e9bc" />
+<img width="400" height="265" alt="image" src="https://github.com/user-attachments/assets/257c7c6d-b499-4eac-8681-9a8b87600d02" />
+<img width="567" height="97" alt="image" src="https://github.com/user-attachments/assets/e317b055-2a80-4b82-93c5-8479c962bcef" />
 
 
 **4. Setup Remote Desktop for Non-Administrative Users on Client-1**
@@ -136,7 +133,7 @@ Log in to **Client-1** using the **local administrator account**.
 Log in to **Client-1** using the domain admin account:
 
 * **Username:** `mydomain.com\jane_admin`
-* **Password:** `Cyberlab123!`
+* **Password:** `Password1`
 
 ### Enable Remote Desktop Access
 1. Open **System Properties**.
@@ -148,17 +145,12 @@ Log in to **Client-1** using the domain admin account:
 You can now log in to **Client-1** using a **non-administrative domain user**.
 Note: In production environments, this is typically configured using Group Policy.
 
+<img width="256" height="174" alt="image" src="https://github.com/user-attachments/assets/fe242b76-fcda-4ab6-bac3-ca70028b5ea9" />
+<img width="298" height="112" alt="image" src="https://github.com/user-attachments/assets/1a09ee38-ac2c-410b-941d-9eae47e005cc" />
+<img width="256" height="247" alt="image" src="https://github.com/user-attachments/assets/1d151898-0a1d-4e70-a81c-04880e6a07cd" />
+<img width="256" height="232" alt="image" src="https://github.com/user-attachments/assets/986e03cd-f6f1-45d8-861c-469c952366da" />
+<img width="365" height="254" alt="image" src="https://github.com/user-attachments/assets/b7f55be0-d64b-46f9-a827-463bb0cc9e6b" />
 
-<img width="454" alt="Screenshot 2025-01-23 at 4 05 59 PM" src="https://github.com/user-attachments/assets/665b22bd-58b9-4127-a7f6-8667cb8e7b4c" />
-<img width="843" alt="Screenshot 2025-01-23 at 4 06 36 PM" src="https://github.com/user-attachments/assets/1bb20155-8432-4e58-aec5-6d21b284fb1e" />
-<img width="325" alt="Screenshot 2025-01-23 at 4 06 48 PM" src="https://github.com/user-attachments/assets/6cd9900d-348b-4abd-a879-a21fd617459c" />
-<img width="401" alt="Screenshot 2025-01-23 at 4 07 18 PM" src="https://github.com/user-attachments/assets/e952c9c0-5d5a-4038-b759-9cee7ea85b62" />
-
-
-**5. Create Additional Users and Test Login**
-Here’s a **clean, simple, and concise version** that fits the style of your other sections:
-
----
 
 ## 5. Create Multiple Users with a Script
 
@@ -183,14 +175,16 @@ Open **Active Directory Users and Computers (ADUC)** and confirm the new account
 Attempt to log in to **Client-1** using one of the newly created user accounts. Ensure the password matches the one defined in the script.
 
 
-<img width="463" alt="Screenshot 2025-01-23 at 4 08 49 PM" src="https://github.com/user-attachments/assets/baaf9830-96e3-41ac-83d4-3d921678e598" />
-<img width="1056" alt="Screenshot 2025-01-23 at 4 10 56 PM" src="https://github.com/user-attachments/assets/6d001fd1-8a35-4b2f-95c8-f7e307deff3d" />
-<img width="1075" alt="Screenshot 2025-01-23 at 4 11 51 PM" src="https://github.com/user-attachments/assets/1672380d-8f86-4110-8ff1-6cabeeafd496" />
-<img width="760" alt="Screenshot 2025-01-23 at 4 12 00 PM" src="https://github.com/user-attachments/assets/759907a3-4f8d-48f0-8c4c-038bf8bd65ac" />
-<img width="785" alt="Screenshot 2025-01-23 at 4 12 32 PM" src="https://github.com/user-attachments/assets/a27ebddb-84e5-48a0-961f-b3e9cef46f2c" />
-<img width="504" alt="Screenshot 2025-01-23 at 4 12 45 PM" src="https://github.com/user-attachments/assets/9cbef0ab-23fa-4e71-ba6c-e3443083a78e" />
-<img width="625" alt="Screenshot 2025-01-23 at 4 18 45 PM" src="https://github.com/user-attachments/assets/5740d186-36e0-4ece-9ce5-a6803321272d" />
-<img width="559" alt="Screenshot 2025-01-23 at 4 19 44 PM" src="https://github.com/user-attachments/assets/23bd76dc-d75e-41fe-8e93-846e1ae83c19" />
+<img width="256" height="182" alt="image" src="https://github.com/user-attachments/assets/f2a28887-2852-4aa6-97a3-96528c55d4fc" />
+<img width="397" height="129" alt="image" src="https://github.com/user-attachments/assets/5c405b71-a0e1-4e7b-a89b-0f40d29c66c9" />
+<img width="216" height="256" alt="image" src="https://github.com/user-attachments/assets/79297155-5bca-4819-82ce-99d3a430080f" />
+<img width="315" height="180" alt="image" src="https://github.com/user-attachments/assets/71f02358-d218-436a-804c-0d12f2d15d39" />
+<img width="256" height="237" alt="image" src="https://github.com/user-attachments/assets/a5e57878-0164-4001-ac51-e9ec03870c8b" />
+<img width="393" height="185" alt="image" src="https://github.com/user-attachments/assets/a936fa3b-8b5a-4c87-a522-0ca403104cc2" />
+<img width="256" height="190" alt="image" src="https://github.com/user-attachments/assets/05becdb2-3d30-4424-ad0d-9ac772936016" />
+<img width="400" height="327" alt="image" src="https://github.com/user-attachments/assets/3c3d49d1-4fcd-4f99-b5d0-8e21870d5c38" />
+<img width="400" height="255" alt="image" src="https://github.com/user-attachments/assets/6a7b9d23-2e15-4c8a-9cf0-63921860e505" />
+
 
 
 <h2>Purpose</h2>
