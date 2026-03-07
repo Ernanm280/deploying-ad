@@ -109,6 +109,11 @@ Log in to **Client-1** using the **local administrator account**.
 
 - Restart **Client-1** after joining the domain.
 
+<img width="233" height="256" alt="image" src="https://github.com/user-attachments/assets/bf3b60b6-f5f7-4754-a248-41da9bd4a37f" />
+<img width="228" height="256" alt="image" src="https://github.com/user-attachments/assets/5efac0fd-df7f-4945-bcd5-92de8dd486c8" />
+<img width="400" height="262" alt="image" src="https://github.com/user-attachments/assets/65ec0fa3-ba4e-467a-bea5-1fee213f8042" />
+<img width="383" height="223" alt="image" src="https://github.com/user-attachments/assets/ac2e7a69-5a7d-4841-ac4c-cda18da4e9bc" />
+
 ### Verify in Active Directory
 
 - Log in to **DC-1** and open **Active Directory Users and Computers (ADUC)** to confirm that **Client-1** appears in the domain.
@@ -116,11 +121,7 @@ Log in to **Client-1** using the **local administrator account**.
 ### Organize Client-1
 
 - Create a new Organizational Unit named `_CLIENTS` and move **Client-1** into it.
- 
-<img width="233" height="256" alt="image" src="https://github.com/user-attachments/assets/bf3b60b6-f5f7-4754-a248-41da9bd4a37f" />
-<img width="228" height="256" alt="image" src="https://github.com/user-attachments/assets/5efac0fd-df7f-4945-bcd5-92de8dd486c8" />
-<img width="400" height="262" alt="image" src="https://github.com/user-attachments/assets/65ec0fa3-ba4e-467a-bea5-1fee213f8042" />
-<img width="383" height="223" alt="image" src="https://github.com/user-attachments/assets/ac2e7a69-5a7d-4841-ac4c-cda18da4e9bc" />
+
 <img width="400" height="265" alt="image" src="https://github.com/user-attachments/assets/257c7c6d-b499-4eac-8681-9a8b87600d02" />
 <img width="567" height="97" alt="image" src="https://github.com/user-attachments/assets/e317b055-2a80-4b82-93c5-8479c962bcef" />
 
@@ -166,9 +167,17 @@ Log in to **DC-1** using the domain admin account:
 2. Create a new file and paste the provided script.
 3. Run the script to generate multiple user accounts. [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)
 
+<img width="216" height="256" alt="image" src="https://github.com/user-attachments/assets/79297155-5bca-4819-82ce-99d3a430080f" />
+<img width="397" height="129" alt="image" src="https://github.com/user-attachments/assets/5c405b71-a0e1-4e7b-a89b-0f40d29c66c9" /><img width="315" height="180" alt="image" src="https://github.com/user-attachments/assets/71f02358-d218-436a-804c-0d12f2d15d39" />
+<img width="256" height="237" alt="image" src="https://github.com/user-attachments/assets/a5e57878-0164-4001-ac51-e9ec03870c8b" />
+<img width="393" height="185" alt="image" src="https://github.com/user-attachments/assets/a936fa3b-8b5a-4c87-a522-0ca403104cc2" />
+<img width="256" height="190" alt="image" src="https://github.com/user-attachments/assets/05becdb2-3d30-4424-ad0d-9ac772936016" />
+
 ### Verify Accounts
 
 Open **Active Directory Users and Computers (ADUC)** and confirm the new accounts appear in the `_EMPLOYEES` OU.
+
+<img width="400" height="327" alt="image" src="https://github.com/user-attachments/assets/3c3d49d1-4fcd-4f99-b5d0-8e21870d5c38" />
 
 ### Test Login
 
@@ -176,15 +185,6 @@ Attempt to log in to **Client-1** using one of the newly created user accounts. 
 
 
 <img width="256" height="182" alt="image" src="https://github.com/user-attachments/assets/f2a28887-2852-4aa6-97a3-96528c55d4fc" />
-<img width="397" height="129" alt="image" src="https://github.com/user-attachments/assets/5c405b71-a0e1-4e7b-a89b-0f40d29c66c9" />
-<img width="216" height="256" alt="image" src="https://github.com/user-attachments/assets/79297155-5bca-4819-82ce-99d3a430080f" />
-<img width="315" height="180" alt="image" src="https://github.com/user-attachments/assets/71f02358-d218-436a-804c-0d12f2d15d39" />
-<img width="256" height="237" alt="image" src="https://github.com/user-attachments/assets/a5e57878-0164-4001-ac51-e9ec03870c8b" />
-<img width="393" height="185" alt="image" src="https://github.com/user-attachments/assets/a936fa3b-8b5a-4c87-a522-0ca403104cc2" />
-<img width="256" height="190" alt="image" src="https://github.com/user-attachments/assets/05becdb2-3d30-4424-ad0d-9ac772936016" />
-<img width="400" height="327" alt="image" src="https://github.com/user-attachments/assets/3c3d49d1-4fcd-4f99-b5d0-8e21870d5c38" />
-<img width="400" height="255" alt="image" src="https://github.com/user-attachments/assets/6a7b9d23-2e15-4c8a-9cf0-63921860e505" />
-
 
 
 <h2>Purpose</h2>
