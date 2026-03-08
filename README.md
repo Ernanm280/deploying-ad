@@ -29,7 +29,7 @@ Connect to the **DC-1 Virtual Machine** using Remote Desktop.
 **Credentials**
 
 * **Username:** `Administrator`
-* **Password:** *your password*
+* **Password:** `your password`
 
 ### Install Active Directory Domain Services
 1. Open **Server Manager**.
@@ -50,10 +50,10 @@ mydomain.com
 5. Complete the setup and allow the server to **restart**.
 
 ### Login Using Domain Account
-After the restart, log back into **DC-1**.
+After the restart, log back into `DC-1`.
 
 * **Username:** `mydomain.com\Administrator`
-* **Password:** *your password*
+* **Password:** `your password`
 
 <img width="400" height="302" alt="image" src="https://github.com/user-attachments/assets/bff6471c-e00d-4c9b-881a-2abe50f420ec" />
 <img width="400" height="315" alt="image" src="https://github.com/user-attachments/assets/f4241cbc-4f99-4b34-b527-1a5f17d1909a" />
@@ -64,7 +64,7 @@ After the restart, log back into **DC-1**.
 *2. Create a Domain Admin User*
 ---
 ### Open Active Directory Users and Computers
-On **DC-1**, open **Active Directory Users and Computers (ADUC)**.
+On `DC-1`, open `Active Directory Users and Computers (ADUC)`.
 
 ### Create Organizational Units
 Create two Organizational Units (OUs):
@@ -74,20 +74,20 @@ Create two Organizational Units (OUs):
 ### Create a New User
 
 Create a user with the following details:
-* **Name:** Jane Doe
+* **Name:** `Jane Doe`
 * **Username:** `jane_admin`
 * **Password:** `Passsword1`
 
-Place the user in the **_ADMINS** OU.
+Place the user in the `_ADMINS` OU.
 
 ### Add User to Domain Admins
 Add `jane_admin` to the **Domain Admins** security group.
 
 ### Log in as jane_admin
-Log out of **DC-1** and log back in using:
+Log out of `DC-1` and log back in using:
 
 * **Username:** `mydomain.com\jane_admin`
-* **Password:** `Password1`
+* **Password:** `your password`
 
 Use **jane_admin** as the admin account for the rest of the lab.
 
@@ -134,7 +134,7 @@ Log in to **Client-1** using the **local administrator account**.
 Log in to **Client-1** using the domain admin account:
 
 * **Username:** `mydomain.com\jane_admin`
-* **Password:** `Password1`
+* **Password:** `your password`
 
 ### Enable Remote Desktop Access
 1. Open **System Properties**.
@@ -143,7 +143,7 @@ Log in to **Client-1** using the domain admin account:
 
 ### Test Remote Access
 
-You can now log in to **Client-1** using a **non-administrative domain user**.
+You can now log in to `Client-1` using a **non-administrative domain user**.
 Note: In production environments, this is typically configured using Group Policy.
 
 <img width="256" height="174" alt="image" src="https://github.com/user-attachments/assets/fe242b76-fcda-4ab6-bac3-ca70028b5ea9" />
@@ -157,15 +157,15 @@ Note: In production environments, this is typically configured using Group Polic
 
 ### Login to DC-1
 
-Log in to **DC-1** using the domain admin account:
+Log in to `DC-1` using the domain admin account:
 
 * **Username:** `mydomain.com\jane_admin`
 
 ### Run the PowerShell Script
 
-1. Open **PowerShell ISE** as **Administrator**.
+1. Open `PowerShell ISE` as **Administrator**.
 2. Create a new file and paste the provided script.
-3. Run the script to generate multiple user accounts. [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)
+3. Run the script to generate multiple user accounts. `[script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)`
 
 <img width="216" height="256" alt="image" src="https://github.com/user-attachments/assets/79297155-5bca-4819-82ce-99d3a430080f" />
 <img width="397" height="129" alt="image" src="https://github.com/user-attachments/assets/5c405b71-a0e1-4e7b-a89b-0f40d29c66c9" /><img width="315" height="180" alt="image" src="https://github.com/user-attachments/assets/71f02358-d218-436a-804c-0d12f2d15d39" />
@@ -175,13 +175,13 @@ Log in to **DC-1** using the domain admin account:
 
 ### Verify Accounts
 
-Open **Active Directory Users and Computers (ADUC)** and confirm the new accounts appear in the `_EMPLOYEES` OU.
+Open `Active Directory Users and Computers (ADUC)** and confirm the new accounts appear in the `_EMPLOYEES` OU.
 
 <img width="400" height="327" alt="image" src="https://github.com/user-attachments/assets/3c3d49d1-4fcd-4f99-b5d0-8e21870d5c38" />
 
 ### Test Login
 
-Attempt to log in to **Client-1** using one of the newly created user accounts. Ensure the password matches the one defined in the script.
+Attempt to log in to `Client-1` using one of the newly created user accounts. Ensure the password matches the one defined in the script.
 
 
 <img width="256" height="182" alt="image" src="https://github.com/user-attachments/assets/f2a28887-2852-4aa6-97a3-96528c55d4fc" />
