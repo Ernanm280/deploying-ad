@@ -166,7 +166,6 @@ Log in to `DC-1` using the domain admin account:
 
 <img width="825" height="975" alt="Screenshot 2026-03-02 220839" src="https://github.com/user-attachments/assets/a388740e-230b-47e6-b80e-7d6dd3c1d653" />
 <img width="397" height="129" alt="Screenshot 2026-03-02 220458" src="https://github.com/user-attachments/assets/a492263a-0a4d-4ae5-9883-b21e84c79f4a" />
-<img width="397" height="129" alt="Screenshot 2026-03-02 220458" src="https://github.com/user-attachments/assets/bf0c0793-8e2d-4865-bdb3-09df814209a3" />
 <img width="518" height="244" alt="Screenshot 2026-03-02 221228" src="https://github.com/user-attachments/assets/17ac5463-6f61-4211-a61d-d0585ccb2c7f" />
 <img width="506" height="737" alt="Screenshot 2026-03-02 221333" src="https://github.com/user-attachments/assets/94252ef7-c599-4e10-8898-ffd5935b5d0c" />
 
