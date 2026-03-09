@@ -37,6 +37,9 @@ Connect to the **DC-1 Virtual Machine** using Remote Desktop.
 3. Select **Active Directory Domain Services (AD DS)**.
 4. Complete the installation.
 
+<img width="1089" height="824" alt="Screenshot 2026-03-02 210042" src="https://github.com/user-attachments/assets/741bf009-c986-4762-92f0-d8042f40d685" />
+<img width="423" height="333" alt="Screenshot 2026-03-02 210652" src="https://github.com/user-attachments/assets/f01b3a70-1bec-46b8-9ed6-68d867feb75a" />
+
 ### Promote Server to Domain Controller
 1. In **Server Manager**, click the **notification flag**.
 2. Select **Promote this server to a domain controller**.
@@ -49,17 +52,13 @@ mydomain.com
 
 5. Complete the setup and allow the server to **restart**.
 
+<img width="750" height="551" alt="Screenshot 2026-03-02 210910" src="https://github.com/user-attachments/assets/121eae31-5dd7-41e7-8761-58deb334139a" />
+
 ### Login Using Domain Account
 After the restart, log back into `DC-1`.
 
 * **Username:** `mydomain.com\Administrator`
 * **Password:** `your password`
-
-<img width="400" height="302" alt="image" src="https://github.com/user-attachments/assets/bff6471c-e00d-4c9b-881a-2abe50f420ec" />
-<img width="400" height="315" alt="image" src="https://github.com/user-attachments/assets/f4241cbc-4f99-4b34-b527-1a5f17d1909a" />
-<img width="400" height="294" alt="image" src="https://github.com/user-attachments/assets/eafdc315-a35a-417a-9473-5a16a442b7e2" />
-<img width="256" height="223" alt="image" src="https://github.com/user-attachments/assets/8b735bf4-8a0d-4d52-a058-73e99ebbdc65" />
-
 
 *2. Create a Domain Admin User*
 ---
@@ -70,6 +69,9 @@ On `DC-1`, open `Active Directory Users and Computers (ADUC)`.
 Create two Organizational Units (OUs):
 * `_EMPLOYEES`
 * `_ADMINS`
+
+<img width="432" height="366" alt="Screenshot 2026-03-02 212943" src="https://github.com/user-attachments/assets/b8502dfb-d252-4a61-b087-c438874e0a2e" />
+<img width="429" height="370" alt="Screenshot 2026-03-02 213020" src="https://github.com/user-attachments/assets/c3c27f7d-424a-424b-8e16-1249fb91ccfe" />
 
 ### Create a New User
 
@@ -83,6 +85,11 @@ Place the user in the `_ADMINS` OU.
 ### Add User to Domain Admins
 Add `jane_admin` to the **Domain Admins** security group.
 
+<img width="569" height="476" alt="Screenshot 2026-03-02 213255" src="https://github.com/user-attachments/assets/495b7b62-10c5-478a-a914-c7d0541929b1" />
+<img width="432" height="371" alt="Screenshot 2026-03-02 213358" src="https://github.com/user-attachments/assets/59552757-16a5-43b5-a4c8-9244fa86ab4c" />
+<img width="498" height="355" alt="Screenshot 2026-03-02 213609" src="https://github.com/user-attachments/assets/4f860ebd-ddef-4ca6-8a33-111132a85fe6" />
+
+
 ### Log in as jane_admin
 Log out of `DC-1` and log back in using:
 
@@ -91,13 +98,7 @@ Log out of `DC-1` and log back in using:
 
 Use **jane_admin** as the admin account for the rest of the lab.
 
-<img width="256" height="225" alt="image" src="https://github.com/user-attachments/assets/dab997bd-f6e4-471b-a803-860dcd3677f7" />
-<img width="256" height="217" alt="image" src="https://github.com/user-attachments/assets/52a74f62-e005-47dd-aabf-085c5f35f4b2" />
-<img width="256" height="221" alt="image" src="https://github.com/user-attachments/assets/d162292a-7797-4d72-a3c0-5f371523eb2e" />
-<img width="256" height="214" alt="image" src="https://github.com/user-attachments/assets/9f9e9cb6-395a-43ac-b38e-631ec7748ded" />
-<img width="256" height="220" alt="image" src="https://github.com/user-attachments/assets/85ef7de0-8a76-477c-8a0d-17d48057460d" />
-<img width="256" height="182" alt="image" src="https://github.com/user-attachments/assets/a899c185-0d11-4bab-9c64-5f291ec873b3" />
-
+<img width="442" height="315" alt="Screenshot 2026-03-02 215936" src="https://github.com/user-attachments/assets/bd313518-9988-4b2b-9dd2-74832557a2d5" />
 
  *3. Join Client-1 to the Domain*
 ---
@@ -107,12 +108,12 @@ Log in to **Client-1** using the **local administrator account**.
 - Open **System Properties** and join the computer to the domain:
 `mydomain.com`
 
-- Restart **Client-1** after joining the domain.
+<img width="423" height="465" alt="Screenshot 2026-03-02 214201" src="https://github.com/user-attachments/assets/b60aab9b-e79a-4437-b41e-9babb47918ed" />
+<img width="389" height="436" alt="Screenshot 2026-03-02 214219" src="https://github.com/user-attachments/assets/62b9aade-e129-48eb-b653-cb67be42ee66" />
+<img width="450" height="295" alt="Screenshot 2026-03-02 214311" src="https://github.com/user-attachments/assets/ea3975b0-2774-4567-a809-83b0865f1347" />
+<img width="383" height="223" alt="Screenshot 2026-03-02 214344" src="https://github.com/user-attachments/assets/61ac94f3-9429-4f48-a7fd-ae7336322440" />
 
-<img width="233" height="256" alt="image" src="https://github.com/user-attachments/assets/bf3b60b6-f5f7-4754-a248-41da9bd4a37f" />
-<img width="228" height="256" alt="image" src="https://github.com/user-attachments/assets/5efac0fd-df7f-4945-bcd5-92de8dd486c8" />
-<img width="400" height="262" alt="image" src="https://github.com/user-attachments/assets/65ec0fa3-ba4e-467a-bea5-1fee213f8042" />
-<img width="383" height="223" alt="image" src="https://github.com/user-attachments/assets/ac2e7a69-5a7d-4841-ac4c-cda18da4e9bc" />
+- Restart **Client-1** after joining the domain.
 
 ### Verify in Active Directory
 
@@ -122,16 +123,15 @@ Log in to **Client-1** using the **local administrator account**.
 
 - Create a new Organizational Unit named `_CLIENTS` and move **Client-1** into it.
 
-<img width="400" height="265" alt="image" src="https://github.com/user-attachments/assets/257c7c6d-b499-4eac-8681-9a8b87600d02" />
-<img width="567" height="97" alt="image" src="https://github.com/user-attachments/assets/e317b055-2a80-4b82-93c5-8479c962bcef" />
-
+<img width="623" height="413" alt="Screenshot 2026-03-02 214646" src="https://github.com/user-attachments/assets/8cd94296-409b-4b60-a766-c0c5c1e9e8a6" />
+<img width="567" height="97" alt="Screenshot 2026-03-02 214753" src="https://github.com/user-attachments/assets/ae86d45a-67e5-4a2f-aecf-544745a19bbf" />
 
 *4. Setup Remote Desktop for Non-Administrative Users on Client-1*
 ---
 
 ### Login to Client-1
 
-Log in to **Client-1** using the domain admin account:
+Log in to Client-1' using the domain admin account:
 
 * **Username:** `mydomain.com\jane_admin`
 * **Password:** `your password`
@@ -141,20 +141,17 @@ Log in to **Client-1** using the domain admin account:
 2. Select the **Remote Desktop** tab.
 3. Allow **Domain Users** access to Remote Desktop.
 
+<img width="571" height="552" alt="Screenshot 2026-03-02 215741" src="https://github.com/user-attachments/assets/452929a3-fb38-417f-a082-d33bf6a2a499" />
+<img width="668" height="607" alt="Screenshot 2026-03-02 215729" src="https://github.com/user-attachments/assets/6b64d7dc-2233-432b-a67a-e5ab7b7003f6" />
+<img width="365" height="254" alt="Screenshot 2026-03-02 215750" src="https://github.com/user-attachments/assets/e669ea53-9d0b-4176-8b4c-624c18a253cb" />
+
 ### Test Remote Access
 
 You can now log in to `Client-1` using a **non-administrative domain user**.
 Note: In production environments, this is typically configured using Group Policy.
 
-<img width="256" height="174" alt="image" src="https://github.com/user-attachments/assets/fe242b76-fcda-4ab6-bac3-ca70028b5ea9" />
-<img width="298" height="112" alt="image" src="https://github.com/user-attachments/assets/1a09ee38-ac2c-410b-941d-9eae47e005cc" />
-<img width="256" height="247" alt="image" src="https://github.com/user-attachments/assets/1d151898-0a1d-4e70-a81c-04880e6a07cd" />
-<img width="256" height="232" alt="image" src="https://github.com/user-attachments/assets/986e03cd-f6f1-45d8-861c-469c952366da" />
-<img width="365" height="254" alt="image" src="https://github.com/user-attachments/assets/b7f55be0-d64b-46f9-a827-463bb0cc9e6b" />
-
-
- *5. Create Multiple Users with a Script*
-
+*5. Create Multiple Users with a Script*
+---
 ### Login to DC-1
 
 Log in to `DC-1` using the domain admin account:
@@ -167,24 +164,25 @@ Log in to `DC-1` using the domain admin account:
 2. Create a new file and paste the provided script.
 3. Run the script to generate multiple user accounts. `[script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)`
 
-<img width="216" height="256" alt="image" src="https://github.com/user-attachments/assets/79297155-5bca-4819-82ce-99d3a430080f" />
-<img width="397" height="129" alt="image" src="https://github.com/user-attachments/assets/5c405b71-a0e1-4e7b-a89b-0f40d29c66c9" /><img width="315" height="180" alt="image" src="https://github.com/user-attachments/assets/71f02358-d218-436a-804c-0d12f2d15d39" />
-<img width="256" height="237" alt="image" src="https://github.com/user-attachments/assets/a5e57878-0164-4001-ac51-e9ec03870c8b" />
-<img width="393" height="185" alt="image" src="https://github.com/user-attachments/assets/a936fa3b-8b5a-4c87-a522-0ca403104cc2" />
-<img width="256" height="190" alt="image" src="https://github.com/user-attachments/assets/05becdb2-3d30-4424-ad0d-9ac772936016" />
+<img width="825" height="975" alt="Screenshot 2026-03-02 220839" src="https://github.com/user-attachments/assets/a388740e-230b-47e6-b80e-7d6dd3c1d653" />
+<img width="397" height="129" alt="Screenshot 2026-03-02 220458" src="https://github.com/user-attachments/assets/a492263a-0a4d-4ae5-9883-b21e84c79f4a" />
+<img width="397" height="129" alt="Screenshot 2026-03-02 220458" src="https://github.com/user-attachments/assets/bf0c0793-8e2d-4865-bdb3-09df814209a3" />
+<img width="518" height="244" alt="Screenshot 2026-03-02 221228" src="https://github.com/user-attachments/assets/17ac5463-6f61-4211-a61d-d0585ccb2c7f" />
+<img width="506" height="737" alt="Screenshot 2026-03-02 221333" src="https://github.com/user-attachments/assets/94252ef7-c599-4e10-8898-ffd5935b5d0c" />
+
 
 ### Verify Accounts
 
 Open `Active Directory Users and Computers (ADUC)` and confirm the new accounts appear in the `_EMPLOYEES` OU.
 
-<img width="400" height="327" alt="image" src="https://github.com/user-attachments/assets/3c3d49d1-4fcd-4f99-b5d0-8e21870d5c38" />
+<img width="616" height="504" alt="Screenshot 2026-03-02 224752" src="https://github.com/user-attachments/assets/e64fabf4-7102-474b-9730-a616d72f890a" />
 
 ### Test Login
 
 Attempt to log in to `Client-1` using one of the newly created user accounts. Ensure the password matches the one defined in the script.
 
-
-<img width="445" height="284" alt="Screenshot 2026-03-02 225658" src="https://github.com/user-attachments/assets/9f7776ec-513e-4f9a-86f4-cf0a8c71014c" />
+<img width="445" height="284" alt="Screenshot 2026-03-02 225658" src="https://github.com/user-attachments/assets/14d1c840-deac-4bc5-9efa-b50e021e77ab" />
+<img width="535" height="320" alt="Screenshot 2026-03-02 230024" src="https://github.com/user-attachments/assets/2fd0656e-a977-40ca-b056-beab5266db92" />
 
 
 <h2>Purpose</h2>
