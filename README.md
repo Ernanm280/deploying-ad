@@ -21,7 +21,7 @@ This repository contains instructions and configurations for deploying an on-pre
 
 <h2>Deployment and Configuration Steps</h2>
 
-**1. Install Active Directory**
+*1. Install Active Directory*
 ---
 ### Login to DC-1
 Connect to the **DC-1 Virtual Machine** using Remote Desktop.
@@ -99,7 +99,7 @@ Use **jane_admin** as the admin account for the rest of the lab.
 <img width="256" height="182" alt="image" src="https://github.com/user-attachments/assets/a899c185-0d11-4bab-9c64-5f291ec873b3" />
 
 
- **3. Join Client-1 to the Domain**
+ *3. Join Client-1 to the Domain*
 ---
 ### Login to Client-1
 Log in to **Client-1** using the **local administrator account**.
@@ -126,7 +126,7 @@ Log in to **Client-1** using the **local administrator account**.
 <img width="567" height="97" alt="image" src="https://github.com/user-attachments/assets/e317b055-2a80-4b82-93c5-8479c962bcef" />
 
 
-**4. Setup Remote Desktop for Non-Administrative Users on Client-1**
+*4. Setup Remote Desktop for Non-Administrative Users on Client-1*
 ---
 
 ### Login to Client-1
@@ -153,7 +153,7 @@ Note: In production environments, this is typically configured using Group Polic
 <img width="365" height="254" alt="image" src="https://github.com/user-attachments/assets/b7f55be0-d64b-46f9-a827-463bb0cc9e6b" />
 
 
-## 5. Create Multiple Users with a Script
+ *5. Create Multiple Users with a Script*
 
 ### Login to DC-1
 
