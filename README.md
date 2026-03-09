@@ -23,7 +23,7 @@ This repository contains instructions and configurations for deploying an on-pre
 
 *1. Install Active Directory*
 ---
-### Login to DC-1
+### Login to `DC-1`
 Connect to the **DC-1 Virtual Machine** using Remote Desktop.
 
 **Credentials**
@@ -100,7 +100,7 @@ Use **jane_admin** as the admin account for the rest of the lab.
 
 <img width="442" height="315" alt="Screenshot 2026-03-02 215936" src="https://github.com/user-attachments/assets/bd313518-9988-4b2b-9dd2-74832557a2d5" />
 
- *3. Join Client-1 to the Domain*
+ *3. `Join Client-1` to the Domain*
 ---
 ### Login to Client-1
 Log in to **Client-1** using the **local administrator account**.
@@ -117,11 +117,11 @@ Log in to **Client-1** using the **local administrator account**.
 
 ### Verify in Active Directory
 
-- Log in to **DC-1** and open **Active Directory Users and Computers (ADUC)** to confirm that **Client-1** appears in the domain.
+- Log in to `DC-1` and open **Active Directory Users and Computers (ADUC)** to confirm that `Client-1` appears in the domain.
 
 ### Organize Client-1
 
-- Create a new Organizational Unit named `_CLIENTS` and move **Client-1** into it.
+- Create a new Organizational Unit named `_CLIENTS` and move `Client-1` into it.
 
 <img width="623" height="413" alt="Screenshot 2026-03-02 214646" src="https://github.com/user-attachments/assets/8cd94296-409b-4b60-a766-c0c5c1e9e8a6" />
 <img width="567" height="97" alt="Screenshot 2026-03-02 214753" src="https://github.com/user-attachments/assets/ae86d45a-67e5-4a2f-aecf-544745a19bbf" />
@@ -131,7 +131,7 @@ Log in to **Client-1** using the **local administrator account**.
 
 ### Login to Client-1
 
-Log in to Client-1' using the domain admin account:
+Log in to `Client-1` using the domain admin account:
 
 * **Username:** `mydomain.com\jane_admin`
 * **Password:** `your password`
