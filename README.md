@@ -184,7 +184,7 @@ Open `Active Directory Users and Computers (ADUC)` and confirm the new accounts 
 Attempt to log in to `Client-1` using one of the newly created user accounts. Ensure the password matches the one defined in the script.
 
 
-<img width="256" height="182" alt="image" src="https://github.com/user-attachments/assets/f2a28887-2852-4aa6-97a3-96528c55d4fc" />
+<img width="445" height="284" alt="Screenshot 2026-03-02 225658" src="https://github.com/user-attachments/assets/9f7776ec-513e-4f9a-86f4-cf0a8c71014c" />
 
 
 <h2>Purpose</h2>
