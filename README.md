@@ -76,7 +76,7 @@ Create two Organizational Units (OUs):
 Create a user with the following details:
 * **Name:** `Jane Doe`
 * **Username:** `jane_admin`
-* **Password:** `Passsword1`
+* **Password:** `your password`
 
 Place the user in the `_ADMINS` OU.
 
