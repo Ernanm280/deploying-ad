@@ -21,7 +21,7 @@ This repository contains instructions and configurations for deploying an on-pre
 
 <h2>Deployment and Configuration Steps</h2>
 
-*1. Install Active Directory*
+1. Install Active Directory
 ---
 ### Login to `DC-1`
 Connect to the **DC-1 Virtual Machine** using Remote Desktop.
@@ -60,7 +60,7 @@ After the restart, log back into `DC-1`.
 * **Username:** `mydomain.com\Administrator`
 * **Password:** `your password`
 
-*2. Create a Domain Admin User*
+2. Create a Domain Admin User
 ---
 ### Open Active Directory Users and Computers
 On `DC-1`, open `Active Directory Users and Computers (ADUC)`.
@@ -100,7 +100,7 @@ Use **jane_admin** as the admin account for the rest of the lab.
 
 <img width="442" height="315" alt="Screenshot 2026-03-02 215936" src="https://github.com/user-attachments/assets/bd313518-9988-4b2b-9dd2-74832557a2d5" />
 
- *3. `Join Client-1` to the Domain*
+ 3. `Join Client-1` to the Domain
 ---
 ### Login to Client-1
 Log in to **Client-1** using the **local administrator account**.
@@ -126,7 +126,7 @@ Log in to **Client-1** using the **local administrator account**.
 <img width="623" height="413" alt="Screenshot 2026-03-02 214646" src="https://github.com/user-attachments/assets/8cd94296-409b-4b60-a766-c0c5c1e9e8a6" />
 <img width="567" height="97" alt="Screenshot 2026-03-02 214753" src="https://github.com/user-attachments/assets/ae86d45a-67e5-4a2f-aecf-544745a19bbf" />
 
-*4. Setup Remote Desktop for Non-Administrative Users on Client-1*
+4. Setup Remote Desktop for Non-Administrative Users on Client-1
 ---
 
 ### Login to Client-1
@@ -150,7 +150,7 @@ Log in to `Client-1` using the domain admin account:
 You can now log in to `Client-1` using a **non-administrative domain user**.
 Note: In production environments, this is typically configured using Group Policy.
 
-*5. Create Multiple Users with a Script*
+5. Create Multiple Users with a Script
 ---
 ### Login to DC-1
 
