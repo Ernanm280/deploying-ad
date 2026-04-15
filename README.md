@@ -21,73 +21,46 @@ This repository contains instructions and configurations for deploying an on-pre
 
 <h2>Deployment and Configuration Steps</h2>
 
-### 1. Install Active Directory
+### 1. Create a Domain Admin User
 
-### Login to `DC-1`
-Connect to the **DC-1 Virtual Machine** using Remote Desktop.
+I begin by opening an `RDP` session to the **DC-1** VM using the original admin user created in Azure, but with domain credentials `mydomain.com\<yourcreatedcredentials>` and password. Once logged into the VM, I ran **Active Directory Users and Computers (ADUC)** as an administrator.
 
-**Credentials**
+<img width="871" height="561" alt="Screenshot 2026-04-11 175157" src="https://github.com/user-attachments/assets/1ca449f4-7cf6-42d1-9308-51dcd98b4555" />
 
-* **Username:** `Administrator`
-* **Password:** `your password`
+<br>
+<br>
 
-### Install Active Directory Domain Services
-1. Open **Server Manager**.
-2. Click **Add Roles and Features**.
-3. Select **Active Directory Domain Services (AD DS)**.
-4. Complete the installation.
+Within **Active Directory Users and Computers**, I right-clicked the domain (mydomain.com), selected New → Organizational Unit, and created two Organizational Units (OUs) named _EMPLOYEES and _ADMINS. These OUs will be used to logically separate standard user accounts from administrative accounts, allowing for better organization and easier management of permissions and Group Policy.
 
-<img width="1089" height="824" alt="Screenshot 2026-03-02 210042" src="https://github.com/user-attachments/assets/741bf009-c986-4762-92f0-d8042f40d685" />
-<img width="423" height="333" alt="Screenshot 2026-03-02 210652" src="https://github.com/user-attachments/assets/f01b3a70-1bec-46b8-9ed6-68d867feb75a" />
+<br>
+<br>
 
-### Promote Server to Domain Controller
-1. In **Server Manager**, click the **notification flag**.
-2. Select **Promote this server to a domain controller**.
-3. Choose **Add a new forest**.
-4. Enter the domain name:
-   
-```
-mydomain.com
-```
+<img width="742" height="522" alt="Screenshot 2026-04-11 175310" src="https://github.com/user-attachments/assets/74bb778f-e0d1-4d6f-b790-92036e783282" />
 
-5. Complete the setup and allow the server to **restart**.
+<br>
+<br>
 
-<img width="750" height="551" alt="Screenshot 2026-03-02 210910" src="https://github.com/user-attachments/assets/121eae31-5dd7-41e7-8761-58deb334139a" />
+Within **Active Directory Users and Computers**, I navigated to the **_ADMINS** Organizational Unit, right-clicked, and selected New → User to create a new administrative account. I entered the user’s details, including the name **Jane Doe**, and assigned the username jane_admin in the **mydomain.com** domain. After completing the required fields, on the Password screen, I unchecked “User must change password at next logon”, enabled “Password never expires”, and then set a password for the account. This account will be used as an administrative account, separate from standard user accounts, to follow best practices for privilege management.
 
-### Login Using Domain Account
-After the restart, log back into `DC-1`.
+<img width="566" height="361" alt="Screenshot 2026-04-11 175719" src="https://github.com/user-attachments/assets/758d793f-132b-4e22-bf9f-27b91c9af5ef" />
+<img width="431" height="372" alt="Screenshot 2026-04-11 180028" src="https://github.com/user-attachments/assets/b6d1ec71-b1c3-4874-a645-7aa8f54266ac" />
+<img width="433" height="372" alt="Screenshot 2026-04-11 180107" src="https://github.com/user-attachments/assets/7d233b61-2626-407a-87e4-58432ba8f64d" />
 
-* **Username:** `mydomain.com\Administrator`
-* **Password:** `your password`
----
-### 2. Create a Domain Admin User
+<br>
+<br>
 
-### Open Active Directory Users and Computers
-On `DC-1`, open `Active Directory Users and Computers (ADUC)`.
+We verify that Jane Admin is in the designated group, the _ADMINS (OU). 
 
-### Create Organizational Units
-Create two Organizational Units (OUs):
-* `_EMPLOYEES`
-* `_ADMINS`
+<img width="605" height="181" alt="Screenshot 2026-04-11 180140" src="https://github.com/user-attachments/assets/77ccfc53-c6c1-48d7-9e5e-355ff1e339e2" />
 
-<img width="432" height="366" alt="Screenshot 2026-03-02 212943" src="https://github.com/user-attachments/assets/b8502dfb-d252-4a61-b087-c438874e0a2e" />
-<img width="429" height="370" alt="Screenshot 2026-03-02 213020" src="https://github.com/user-attachments/assets/c3c27f7d-424a-424b-8e16-1249fb91ccfe" />
+<br>
+<br>
 
-### Create a New User
+Right-clicking **Jane Doe** (administrative account), in the user’s **Properties**, under the **Member Of** tab, I selected **Add**, entered "Domain Admins", and clicked **Check Names** to validate the group. After confirming, I clicked **OK** to add the user to the Domain Admins group, granting administrative privileges.
+Adding the user to the Domain Admins group provides full administrative control over the domain, following the practice of using dedicated admin accounts instead of default ones.
 
-Create a user with the following details:
-* **Name:** `Jane Doe`
-* **Username:** `jane_admin`
-* **Password:** `your password`
-
-Place the user in the `_ADMINS` OU.
-
-### Add User to Domain Admins
-Add `jane_admin` to the **Domain Admins** security group.
-
-<img width="569" height="476" alt="Screenshot 2026-03-02 213255" src="https://github.com/user-attachments/assets/495b7b62-10c5-478a-a914-c7d0541929b1" />
-<img width="432" height="371" alt="Screenshot 2026-03-02 213358" src="https://github.com/user-attachments/assets/59552757-16a5-43b5-a4c8-9244fa86ab4c" />
-<img width="498" height="355" alt="Screenshot 2026-03-02 213609" src="https://github.com/user-attachments/assets/4f860ebd-ddef-4ca6-8a33-111132a85fe6" />
+<img width="526" height="360" alt="Screenshot 2026-04-11 180608" src="https://github.com/user-attachments/assets/2a31d849-d070-4831-baf1-3eb5786c822f" />
+<img width="862" height="492" alt="Screenshot 2026-04-11 180425" src="https://github.com/user-attachments/assets/1cc42884-f965-437b-be6e-7e74b73df1e6" />
 
 
 ### Log in as jane_admin
