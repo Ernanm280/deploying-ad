@@ -24,7 +24,7 @@ This repository contains instructions and configurations for deploying an on-pre
 **1. Create a Domain Admin User**
 ---
 
-I begin by opening an `RDP` session to the **DC-1** VM using the original admin user created in Azure, but with domain credentials `mydomain.com\<yourcreatedcredentials>` and password. Once logged into the VM, I ran **Active Directory Users and Computers (ADUC)** as an administrator.
+I begin by opening a Remote Desktop session to the **DC-1** VM using the original admin user created in Azure, but with domain credentials `mydomain.com\<yourcreatedcredentials>` and password. Once logged into the VM, I ran **Active Directory Users and Computers (ADUC)** as an administrator.
 
 <img width="871" height="561" alt="Screenshot 2026-04-11 175157" src="https://github.com/user-attachments/assets/1ca449f4-7cf6-42d1-9308-51dcd98b4555" />
 
@@ -73,7 +73,7 @@ Logged out of `DC-1` and logged back in using the domain credentials `mydomain.c
 **2. Join Client-1 to the Domain**
 ---
 
-Navigate to the Azure Virtual machine list and select **Client-1** VM, initiate `RDP` with the IP address (52.186.171.6) using domain credentials `mydomain.com\<yourcreatedcredentials>` and password. 
+Navigate to the Azure Virtual machine list and select **Client-1** VM, initiate Remote Desktop with the IP address (52.186.171.6) using domain credentials `mydomain.com\<yourcreatedcredentials>` and password. 
 
 <img width="977" height="430" alt="Screenshot 2026-04-11 181442" src="https://github.com/user-attachments/assets/a4cef92b-b067-4e0f-9735-850ee3df86d0" />
 
@@ -119,45 +119,29 @@ This configuration allows authorized domain users to remotely connect to the cli
 <img width="369" height="153" alt="Screenshot 2026-04-11 183207" src="https://github.com/user-attachments/assets/41315fdf-405c-4a04-b271-fa9cd87bab14" />
 
 
-### Test Remote Access
-
 You can now log in to `Client-1` using a **non-administrative domain user**.
-Note: In production environments, this is typically configured using Group Policy.
 
----
+**Note:** In production environments, this is typically configured using Group Policy.
+
  
 **4. Create Multiple Users with a Script**
+---
 
-### Login to DC-1
+To simulate a real-world scenario, I automated the creation of multiple user accounts, similar to how an IT administrator would onboard new employees from an HR-provided list. The script creates these accounts in bulk and automatically assigns them to the _EMPLOYEES Organizational Unit. Returning to the Domain Controller, I opened **Windows PowerShell ISE** as **Administrator** to create a new file and paste the provided script (`[script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)`) to generate multiple user accounts. We note that a password is provided within the script `$PASSWORD_FOR_USERS= "Password1"` for all accounts. 
 
-Log in to `DC-1` using the domain admin account:
+<img width="728" height="675" alt="Screenshot 2026-04-11 184416" src="https://github.com/user-attachments/assets/262b828b-9714-43b8-b2fb-5bc058972ba6" />
+<img width="798" height="634" alt="Screenshot 2026-04-11 184647" src="https://github.com/user-attachments/assets/d8b091da-c4e4-4e5b-a6c0-4ff422b8feff" />
 
-* **Username:** `mydomain.com\jane_admin`
+As we run the script, observe the list of accounts being generated, then open `Active Directory Users and Computers (ADUC)` and confirm the new accounts appear in the `_EMPLOYEES` OU. 
 
-### Run the PowerShell Script
-
-1. Open `PowerShell ISE` as **Administrator**.
-2. Create a new file and paste the provided script.
-3. Run the script to generate multiple user accounts. `[script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)`
-
-<img width="825" height="975" alt="Screenshot 2026-03-02 220839" src="https://github.com/user-attachments/assets/a388740e-230b-47e6-b80e-7d6dd3c1d653" />
-<img width="397" height="129" alt="Screenshot 2026-03-02 220458" src="https://github.com/user-attachments/assets/a492263a-0a4d-4ae5-9883-b21e84c79f4a" />
-<img width="518" height="244" alt="Screenshot 2026-03-02 221228" src="https://github.com/user-attachments/assets/17ac5463-6f61-4211-a61d-d0585ccb2c7f" />
-<img width="506" height="737" alt="Screenshot 2026-03-02 221333" src="https://github.com/user-attachments/assets/94252ef7-c599-4e10-8898-ffd5935b5d0c" />
-
-
-### Verify Accounts
-
-Open `Active Directory Users and Computers (ADUC)` and confirm the new accounts appear in the `_EMPLOYEES` OU.
-
-<img width="616" height="504" alt="Screenshot 2026-03-02 224752" src="https://github.com/user-attachments/assets/e64fabf4-7102-474b-9730-a616d72f890a" />
+<img width="1239" height="917" alt="Screenshot 2026-04-11 191142" src="https://github.com/user-attachments/assets/c9e895b3-015d-4f66-b36c-199b5adef835" />
 
 ### Test Login
 
-Attempt to log in to `Client-1` using one of the newly created user accounts. Ensure the password matches the one defined in the script.
+After verifying the accounts creation in **Active Directory Users and Computers** under the **_EMPLOYEES** Organizational Unit, I used one of the newly created domain user accounts to authenticate using **Remote Desktop Connection**, confirming that the account was successfully created and could log in to a domain-joined machine. 
 
-<img width="445" height="284" alt="Screenshot 2026-03-02 225658" src="https://github.com/user-attachments/assets/14d1c840-deac-4bc5-9efa-b50e021e77ab" />
-<img width="535" height="320" alt="Screenshot 2026-03-02 230024" src="https://github.com/user-attachments/assets/2fd0656e-a977-40ca-b056-beab5266db92" />
+<img width="918" height="487" alt="Screenshot 2026-04-11 191709" src="https://github.com/user-attachments/assets/68609742-53c7-45fc-b7b9-1ffaaa569761" />
+<img width="1857" height="976" alt="Screenshot 2026-04-11 191757" src="https://github.com/user-attachments/assets/33602baf-7569-4d6a-94da-230227d00090" />
 
 
 <h2>Purpose</h2>
