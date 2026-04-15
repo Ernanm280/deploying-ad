@@ -118,6 +118,8 @@ This configuration allows authorized domain users to remotely connect to the cli
 <img width="1190" height="708" alt="Screenshot 2026-04-11 183149" src="https://github.com/user-attachments/assets/3de897ab-51ae-45e2-bdbd-41c5d72c6e3c" />
 <img width="369" height="153" alt="Screenshot 2026-04-11 183207" src="https://github.com/user-attachments/assets/41315fdf-405c-4a04-b271-fa9cd87bab14" />
 
+<br>
+<br>
 
 You can now log in to `Client-1` using a **non-administrative domain user**.
 
@@ -131,6 +133,9 @@ To simulate a real-world scenario, I automated the creation of multiple user acc
 
 <img width="728" height="675" alt="Screenshot 2026-04-11 184416" src="https://github.com/user-attachments/assets/262b828b-9714-43b8-b2fb-5bc058972ba6" />
 <img width="798" height="634" alt="Screenshot 2026-04-11 184647" src="https://github.com/user-attachments/assets/d8b091da-c4e4-4e5b-a6c0-4ff422b8feff" />
+
+<br>
+<br>
 
 As we run the script, observe the list of accounts being generated, then open `Active Directory Users and Computers (ADUC)` and confirm the new accounts appear in the `_EMPLOYEES` OU. 
 
