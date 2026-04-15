@@ -101,31 +101,23 @@ I went back to the Domain Controller VM `DC-1`, opened **Active Directory Users 
 
 <img width="473" height="214" alt="Screenshot 2026-04-11 182637" src="https://github.com/user-attachments/assets/a207a2ea-5ab2-4620-ab2d-0e0965ac7a74" />
 
+<br>
+<br>
+
 By separating administrators, employees, and client systems into distinct containers for improved organization and management, I create a new Organizational Unit named `_CLIENTS` and move `Client-1` into it.
 
 <img width="582" height="457" alt="Screenshot 2026-04-11 182738" src="https://github.com/user-attachments/assets/882960f6-8834-4522-8b97-976c7f8a774f" />
 <img width="499" height="191" alt="Screenshot 2026-04-11 182847" src="https://github.com/user-attachments/assets/a18c30de-97af-4ac1-81dd-2b5e8a0ee614" />
 
-
+**3. Set up Remote Desktop for Non-Administrative Users**
 ---
+Log in to the **Client-1** VM domain admin username `mydomain.com\jane_admin`, and password. Once logged in, I right-clicked the Start menu and selected **System** to open Remote Desktop Settings, then enabled Remote Desktop by selecting “Select users that can remotely access this PC”. In the Object names field, I typed "Domain User" and selected **Check Names** to validate. After confirming, I clicked **OK** to grant all domain users remote access.
 
-### 4. Set up Remote Desktop for Non-Administrative Users on Client-1
+This configuration allows authorized domain users to remotely connect to the client machine using Remote Desktop Protocol (RDP), enabling centralized and flexible access to the system.
 
-### Login to Client-1
+<img width="1190" height="708" alt="Screenshot 2026-04-11 183149" src="https://github.com/user-attachments/assets/3de897ab-51ae-45e2-bdbd-41c5d72c6e3c" />
+<img width="369" height="153" alt="Screenshot 2026-04-11 183207" src="https://github.com/user-attachments/assets/41315fdf-405c-4a04-b271-fa9cd87bab14" />
 
-Log in to `Client-1` using the domain admin account:
-
-* **Username:** `mydomain.com\jane_admin`
-* **Password:** `your password`
-
-### Enable Remote Desktop Access
-1. Open **System Properties**.
-2. Select the **Remote Desktop** tab.
-3. Allow **Domain Users** access to Remote Desktop.
-
-<img width="571" height="552" alt="Screenshot 2026-03-02 215741" src="https://github.com/user-attachments/assets/452929a3-fb38-417f-a082-d33bf6a2a499" />
-<img width="668" height="607" alt="Screenshot 2026-03-02 215729" src="https://github.com/user-attachments/assets/6b64d7dc-2233-432b-a67a-e5ab7b7003f6" />
-<img width="365" height="254" alt="Screenshot 2026-03-02 215750" src="https://github.com/user-attachments/assets/e669ea53-9d0b-4176-8b4c-624c18a253cb" />
 
 ### Test Remote Access
 
@@ -134,7 +126,7 @@ Note: In production environments, this is typically configured using Group Polic
 
 ---
  
-### 5. Create Multiple Users with a Script
+**4. Create Multiple Users with a Script**
 
 ### Login to DC-1
 
