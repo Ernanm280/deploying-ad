@@ -63,32 +63,33 @@ Adding the user to the Domain Admins group provides full administrative control 
 <img width="862" height="492" alt="Screenshot 2026-04-11 180425" src="https://github.com/user-attachments/assets/1cc42884-f965-437b-be6e-7e74b73df1e6" />
 
 
-### Log in as jane_admin
-Log out of `DC-1` and log back in using:
+Logged out of `DC-1` and logged back in using the domain credentials `mydomain.com\jane_admin` as the username and password. For the remaining steps, we will keep `RDP` open to use **jane_admin** as the admin account for the rest of the lab.
 
-* **Username:** `mydomain.com\jane_admin`
-* **Password:** `your password`
+<img width="932" height="664" alt="Screenshot 2026-04-11 181050" src="https://github.com/user-attachments/assets/238283f0-873f-4143-8d15-b2fb112dccab" />
 
-Use **jane_admin** as the admin account for the rest of the lab.
+### 2. Join Client-1 to the Domain
 
-<img width="442" height="315" alt="Screenshot 2026-03-02 215936" src="https://github.com/user-attachments/assets/bd313518-9988-4b2b-9dd2-74832557a2d5" />
+Navigate to the Azure Virtual machine list and select **Client-1** VM, initiate `RDP` with the IP address (52.186.171.6) using domain credentials `mydomain.com\<yourcreatedcredentials>` and password. 
 
----
+<img width="977" height="430" alt="Screenshot 2026-04-11 181442" src="https://github.com/user-attachments/assets/a4cef92b-b067-4e0f-9735-850ee3df86d0" />
 
-### 3. Join `Client-1` to the Domain
+<br>
+<br>
 
-### Login to Client-1
-Log in to **Client-1** using the **local administrator account**.
+After logging in, I right-clicked the Start menu and selected **System** to access the computer’s system settings and configuration details. 
+On the right-hand side, I selected **Rename this PC (advanced)** > Change, which opened the **System Properties** window. Under the Computer Name tab, I selected Change to modify the computer’s domain membership. I then chose the Domain option, entered mydomain.com, and clicked **OK** to join **Client-1** to the domain.
 
-- Open **System Properties** and join the computer to the domain:
-`mydomain.com`
+<img width="849" height="411" alt="Screenshot 2026-04-11 181635" src="https://github.com/user-attachments/assets/378ec3bd-030e-4533-9661-42ccff34a347" />
+<img width="1187" height="723" alt="Screenshot 2026-04-11 181806" src="https://github.com/user-attachments/assets/07c87cf1-3305-4eb4-90b2-77657e21fe35" />
 
-<img width="423" height="465" alt="Screenshot 2026-03-02 214201" src="https://github.com/user-attachments/assets/b60aab9b-e79a-4437-b41e-9babb47918ed" />
-<img width="389" height="436" alt="Screenshot 2026-03-02 214219" src="https://github.com/user-attachments/assets/62b9aade-e129-48eb-b653-cb67be42ee66" />
-<img width="450" height="295" alt="Screenshot 2026-03-02 214311" src="https://github.com/user-attachments/assets/ea3975b0-2774-4567-a809-83b0865f1347" />
-<img width="383" height="223" alt="Screenshot 2026-03-02 214344" src="https://github.com/user-attachments/assets/61ac94f3-9429-4f48-a7fd-ae7336322440" />
+<br>
+<br>
 
-- Restart **Client-1** after joining the domain.
+After entering valid domain credentials, the computer was successfully joined to the domain and required a restart to apply the changes.
+
+<img width="452" height="366" alt="Screenshot 2026-04-11 182131" src="https://github.com/user-attachments/assets/223f557d-f709-4398-b4b3-219322e77ac3" />
+<img width="297" height="151" alt="Screenshot 2026-04-11 182234" src="https://github.com/user-attachments/assets/1dccc76b-9674-48d3-b6cd-76c0d102af37" />
+<img width="348" height="181" alt="Screenshot 2026-04-11 182247" src="https://github.com/user-attachments/assets/01064df1-4b64-495f-9121-78be19810ce8" />
 
 ### Verify in Active Directory
 
