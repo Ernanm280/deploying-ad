@@ -21,7 +21,8 @@ This repository contains instructions and configurations for deploying an on-pre
 
 <h2>Deployment and Configuration Steps</h2>
 
-### 1. Create a Domain Admin User
+**1. Create a Domain Admin User**
+---
 
 I begin by opening an `RDP` session to the **DC-1** VM using the original admin user created in Azure, but with domain credentials `mydomain.com\<yourcreatedcredentials>` and password. Once logged into the VM, I ran **Active Directory Users and Computers (ADUC)** as an administrator.
 
@@ -62,12 +63,15 @@ Adding the user to the Domain Admins group provides full administrative control 
 <img width="526" height="360" alt="Screenshot 2026-04-11 180608" src="https://github.com/user-attachments/assets/2a31d849-d070-4831-baf1-3eb5786c822f" />
 <img width="862" height="492" alt="Screenshot 2026-04-11 180425" src="https://github.com/user-attachments/assets/1cc42884-f965-437b-be6e-7e74b73df1e6" />
 
+<br>
+<br>
 
 Logged out of `DC-1` and logged back in using the domain credentials `mydomain.com\jane_admin` as the username and password. For the remaining steps, we will keep `RDP` open to use **jane_admin** as the admin account for the rest of the lab.
 
 <img width="932" height="664" alt="Screenshot 2026-04-11 181050" src="https://github.com/user-attachments/assets/238283f0-873f-4143-8d15-b2fb112dccab" />
 
-### 2. Join Client-1 to the Domain
+**2. Join Client-1 to the Domain**
+---
 
 Navigate to the Azure Virtual machine list and select **Client-1** VM, initiate `RDP` with the IP address (52.186.171.6) using domain credentials `mydomain.com\<yourcreatedcredentials>` and password. 
 
@@ -77,7 +81,7 @@ Navigate to the Azure Virtual machine list and select **Client-1** VM, initiate 
 <br>
 
 After logging in, I right-clicked the Start menu and selected **System** to access the computer’s system settings and configuration details. 
-On the right-hand side, I selected **Rename this PC (advanced)** > Change, which opened the **System Properties** window. Under the Computer Name tab, I selected Change to modify the computer’s domain membership. I then chose the Domain option, entered mydomain.com, and clicked **OK** to join **Client-1** to the domain.
+On the right-hand side, I selected **Rename this PC (advanced)** > **Change**, which opened the **System Properties** window. Under the Computer Name tab, I selected Change to modify the computer’s domain membership. I then chose the Domain option, entered mydomain.com, and clicked **OK** to join **Client-1** to the domain.
 
 <img width="849" height="411" alt="Screenshot 2026-04-11 181635" src="https://github.com/user-attachments/assets/378ec3bd-030e-4533-9661-42ccff34a347" />
 <img width="1187" height="723" alt="Screenshot 2026-04-11 181806" src="https://github.com/user-attachments/assets/07c87cf1-3305-4eb4-90b2-77657e21fe35" />
@@ -85,7 +89,7 @@ On the right-hand side, I selected **Rename this PC (advanced)** > Change, which
 <br>
 <br>
 
-After entering valid domain credentials, the computer was successfully joined to the domain and required a restart to apply the changes.
+After entering valid domain credentials, the computer was successfully joined to the domain and required a restart to apply the changes. Joining the computer to the domain allows centralized management of users, security policies, and resources through Active Directory, making administration more efficient and scalable.
 
 <img width="452" height="366" alt="Screenshot 2026-04-11 182131" src="https://github.com/user-attachments/assets/223f557d-f709-4398-b4b3-219322e77ac3" />
 <img width="297" height="151" alt="Screenshot 2026-04-11 182234" src="https://github.com/user-attachments/assets/1dccc76b-9674-48d3-b6cd-76c0d102af37" />
@@ -93,14 +97,15 @@ After entering valid domain credentials, the computer was successfully joined to
 
 ### Verify in Active Directory
 
-- Log in to `DC-1` and open **Active Directory Users and Computers (ADUC)** to confirm that `Client-1` appears in the domain.
+I went back to the Domain Controller VM `DC-1`, opened **Active Directory Users and Computers**, and verified that (Client-1) appeared in the Computers folder under the domain ** mydomain.com **, confirming it was successfully added to the domain.
 
-### Organize Client-1
+<img width="473" height="214" alt="Screenshot 2026-04-11 182637" src="https://github.com/user-attachments/assets/a207a2ea-5ab2-4620-ab2d-0e0965ac7a74" />
 
-- Create a new Organizational Unit named `_CLIENTS` and move `Client-1` into it.
+By separating administrators, employees, and client systems into distinct containers for improved organization and management, I create a new Organizational Unit named `_CLIENTS` and move `Client-1` into it.
 
-<img width="623" height="413" alt="Screenshot 2026-03-02 214646" src="https://github.com/user-attachments/assets/8cd94296-409b-4b60-a766-c0c5c1e9e8a6" />
-<img width="567" height="97" alt="Screenshot 2026-03-02 214753" src="https://github.com/user-attachments/assets/ae86d45a-67e5-4a2f-aecf-544745a19bbf" />
+<img width="582" height="457" alt="Screenshot 2026-04-11 182738" src="https://github.com/user-attachments/assets/882960f6-8834-4522-8b97-976c7f8a774f" />
+<img width="499" height="191" alt="Screenshot 2026-04-11 182847" src="https://github.com/user-attachments/assets/a18c30de-97af-4ac1-81dd-2b5e8a0ee614" />
+
 
 ---
 
