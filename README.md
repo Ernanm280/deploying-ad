@@ -51,7 +51,9 @@ Within **Active Directory Users and Computers**, I right-clicked the domain (myd
 <br>
 <br>
 
-Within **Active Directory Users and Computers**, I navigated to the **_ADMINS** Organizational Unit, right-clicked, and selected New → User to create a new administrative account. I entered the user’s details, including the name **Jane Doe**, and assigned the username jane_admin in the **mydomain.com** domain. After completing the required fields, on the Password screen, I unchecked “User must change password at next logon”, enabled “Password never expires”, and then set a password for the account. This account will be used as an administrative account, separate from standard user accounts, to follow best practices for privilege management.
+Once created, I navigated to the **_ADMINS** Organizational Unit, right-clicked, and selected **New** → **User** to create a new administrative account. I entered the user’s details, including the name **Jane Doe**, and assigned the username jane_admin in the **mydomain.com** domain. After completing the required fields, on the Password screen, I unchecked “User must change password at next logon”, enabled “Password never expires”, and then set a password for the account. 
+
+This account will be used as an administrative account, separate from standard user accounts, to follow best practices for privilege management.
 
 <img width="566" height="361" alt="Screenshot 2026-04-11 175719" src="https://github.com/user-attachments/assets/758d793f-132b-4e22-bf9f-27b91c9af5ef" />
 <img width="431" height="372" alt="Screenshot 2026-04-11 180028" src="https://github.com/user-attachments/assets/b6d1ec71-b1c3-4874-a645-7aa8f54266ac" />
@@ -83,7 +85,7 @@ Logged out of `DC-1` and logged back in using the domain credentials `mydomain.c
 **2. Join Client-1 to the Domain**
 ---
 
-Navigate to the Azure Virtual machine list and select **Client-1** VM, initiate Remote Desktop with the IP address (52.186.171.6) using domain credentials `mydomain.com\<yourcreatedcredentials>` and password. 
+Navigated to the Azure Virtual Machines list and selected the Client-1 VM. Initiated a Remote Desktop connection using the public IP address 52.186.171.6, authenticating with domain credentials in the format `mydomain.com\<yourcreatedcredentials>` and the associated password.
 
 <img width="977" height="430" alt="Screenshot 2026-04-11 181442" src="https://github.com/user-attachments/assets/a4cef92b-b067-4e0f-9735-850ee3df86d0" />
 
@@ -91,7 +93,7 @@ Navigate to the Azure Virtual machine list and select **Client-1** VM, initiate 
 <br>
 
 After logging in, I right-clicked the Start menu and selected **System** to access the computer’s system settings and configuration details. 
-On the right-hand side, I selected **Rename this PC (advanced)** > **Change**, which opened the **System Properties** window. Under the Computer Name tab, I selected Change to modify the computer’s domain membership. I then chose the Domain option, entered mydomain.com, and clicked **OK** to join **Client-1** to the domain.
+On the right-hand side, I selected **Rename this PC (advanced)** > **Change**, which opened the **System Properties** window. Under the Computer Name tab, I selected Change to modify the computer’s domain membership. I then chose the Domain option, entered "mydomain.com", and clicked **OK** to join **Client-1** to the domain.
 
 <img width="849" height="411" alt="Screenshot 2026-04-11 181635" src="https://github.com/user-attachments/assets/378ec3bd-030e-4533-9661-42ccff34a347" />
 <img width="1187" height="723" alt="Screenshot 2026-04-11 181806" src="https://github.com/user-attachments/assets/07c87cf1-3305-4eb4-90b2-77657e21fe35" />
