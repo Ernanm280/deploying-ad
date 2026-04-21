@@ -44,10 +44,7 @@ I begin by opening a Remote Desktop session to the **DC-1** VM using the origina
 <br>
 <br>
 
-Within **Active Directory Users and Computers**, I right-clicked the domain (mydomain.com), selected New → Organizational Unit, and created two Organizational Units (OUs) named _EMPLOYEES and _ADMINS. These OUs will be used to logically separate standard user accounts from administrative accounts, allowing for better organization and easier management of permissions and Group Policy.
-
-<br>
-<br>
+Within **Active Directory Users and Computers**, I right-clicked the domain (mydomain.com), selected **New** → **Organizational Unit**, and created two Organizational Units (OUs) named _EMPLOYEES and _ADMINS. These (OUs) will be used to logically separate standard user accounts from administrative accounts, allowing for better organization and easier management of permissions and Group Policy.
 
 <img width="742" height="522" alt="Screenshot 2026-04-11 175310" src="https://github.com/user-attachments/assets/74bb778f-e0d1-4d6f-b790-92036e783282" />
 
