@@ -109,14 +109,14 @@ After entering valid domain credentials, the computer was successfully joined to
 
 ### Verify in Active Directory
 
-I went back to the Domain Controller VM `DC-1`, opened **Active Directory Users and Computers**, and verified that (Client-1) appeared in the Computers folder under the domain ** mydomain.com **, confirming it was successfully added to the domain.
+I went back to the Domain Controller VM (DC-1), opened **Active Directory Users and Computers**, and verified that (Client-1) appeared in the Computers folder under the domain (mydomain.com), confirming it was successfully added to the domain.
 
 <img width="473" height="214" alt="Screenshot 2026-04-11 182637" src="https://github.com/user-attachments/assets/a207a2ea-5ab2-4620-ab2d-0e0965ac7a74" />
 
 <br>
 <br>
 
-By separating administrators, employees, and client systems into distinct containers for improved organization and management, I create a new Organizational Unit named `_CLIENTS` and move `Client-1` into it.
+By separating administrators, employees, and client systems into distinct containers for improved organization and management, I created a new Organizational Unit named "_CLIENTS" and moved Client-1 into it.
 
 <img width="582" height="457" alt="Screenshot 2026-04-11 182738" src="https://github.com/user-attachments/assets/882960f6-8834-4522-8b97-976c7f8a774f" />
 <img width="499" height="191" alt="Screenshot 2026-04-11 182847" src="https://github.com/user-attachments/assets/a18c30de-97af-4ac1-81dd-2b5e8a0ee614" />
@@ -133,7 +133,7 @@ This configuration allows authorized domain users to remotely connect to the cli
 <br>
 <br>
 
-You can now log in to `Client-1` using a **non-administrative domain user**.
+You can now log in to Client-1 using a **non-administrative domain user**.
 
 **Note:** In production environments, this is typically configured using Group Policy.
 
@@ -149,7 +149,7 @@ To simulate a real-world scenario, I automated the creation of multiple user acc
 <br>
 <br>
 
-As we run the script, observe the list of accounts being generated, then open `Active Directory Users and Computers (ADUC)` and confirm the new accounts appear in the `_EMPLOYEES` OU. 
+As we run the script, observe the list of accounts being generated, then open `Active Directory Users and Computers (ADUC)` and confirm the new accounts appear in the _EMPLOYEES (OU). 
 
 <img width="1239" height="917" alt="Screenshot 2026-04-11 191142" src="https://github.com/user-attachments/assets/c9e895b3-015d-4f66-b36c-199b5adef835" />
 
