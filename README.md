@@ -51,7 +51,7 @@ Within **Active Directory Users and Computers**, I right-clicked the domain (myd
 <br>
 <br>
 
-Once created, I navigated to the **_ADMINS** Organizational Unit, right-clicked, and selected **New** → **User** to create a new administrative account. I entered the user’s details, including the name **Jane Doe**, and assigned the username jane_admin in the **mydomain.com** domain. After completing the required fields, on the Password screen, I unchecked “User must change password at next logon”, enabled “Password never expires”, and then set a password for the account. 
+Once created, I navigated to the **_ADMINS** Organizational Unit, right-clicked, and selected **New** → **User** to create a new administrative account. I entered the user’s details, including the name **Jane Doe**, and assigned the username jane_admin in the **mydomain.com** domain. After completing the required fields, on the password screen, I unchecked “User must change password at next logon”, enabled “Password never expires”, and then set a password for the account. 
 
 This account will be used as an administrative account, separate from standard user accounts, to follow best practices for privilege management.
 
