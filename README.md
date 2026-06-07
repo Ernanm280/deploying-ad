@@ -92,8 +92,7 @@ Navigated to the Azure Virtual Machines list and selected the Client-1 VM. Initi
 <br>
 <br>
 
-After logging in, I right-clicked the Start menu and selected **System** to access the computer’s system settings and configuration details. 
-On the right-hand side, I selected **Rename this PC (advanced)** > **Change**, which opened the **System Properties** window. Under the Computer Name tab, I selected **Change** to modify the computer’s domain membership. I then chose the Domain option, entered "mydomain.com", and clicked **OK** to join **Client-1** to the domain.
+Once logged in to **Client-1**, I right-clicked the Start menu and opened **System** to access the computer’s settings and configuration details. On the right-hand side, I navigated to **Rename this PC (advanced) > Change**, which opened the **System Properties** window. Under the **Computer Name** tab, I clicked **Change** to modify the computer’s domain membership. Next, I selected the **Domain** option, entered **"mydomain.com"**, and clicked **OK** to join **Client-1** to the domain.
 
 <img width="849" height="411" alt="Screenshot 2026-04-11 181635" src="https://github.com/user-attachments/assets/378ec3bd-030e-4533-9661-42ccff34a347" />
 <img width="1187" height="723" alt="Screenshot 2026-04-11 181806" src="https://github.com/user-attachments/assets/07c87cf1-3305-4eb4-90b2-77657e21fe35" />
