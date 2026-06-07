@@ -78,14 +78,14 @@ Adding the user to the Domain Admins group provides full administrative control 
 <br>
 <br>
 
-Logged out of `DC-1` and logged back in using the domain credentials `mydomain.com\jane_admin` as the username and password. For the remaining steps, we will keep `RDP` open to use **jane_admin** as the admin account for the rest of the lab.
+Logged out of DC-1 and logged back in using the domain credentials `mydomain.com\jane_admin` as the username and password. For the remaining steps, we will keep **Remote Desktop** open to use **jane_admin** as the admin account for the rest of the lab.
 
 <img width="932" height="664" alt="Screenshot 2026-04-11 181050" src="https://github.com/user-attachments/assets/238283f0-873f-4143-8d15-b2fb112dccab" />
 
 **2. Join Client-1 to the Domain**
 ---
 
-Navigated to the Azure Virtual Machines list and selected the Client-1 VM. Initiated a Remote Desktop connection using the public IP address 52.186.171.6, authenticating with domain credentials in the format `mydomain.com\<yourcreatedcredentials>` and the associated password.
+Navigated to the Azure Virtual Machines list and selected the Client-1 VM. Initiated a Remote Desktop connection using the public IP address (52.186.171.6), authenticating with domain credentials in the format `mydomain.com\<yourcreatedcredentials>` and the associated password.
 
 <img width="977" height="430" alt="Screenshot 2026-04-11 181442" src="https://github.com/user-attachments/assets/a4cef92b-b067-4e0f-9735-850ee3df86d0" />
 
@@ -93,7 +93,7 @@ Navigated to the Azure Virtual Machines list and selected the Client-1 VM. Initi
 <br>
 
 After logging in, I right-clicked the Start menu and selected **System** to access the computer’s system settings and configuration details. 
-On the right-hand side, I selected **Rename this PC (advanced)** > **Change**, which opened the **System Properties** window. Under the Computer Name tab, I selected Change to modify the computer’s domain membership. I then chose the Domain option, entered "mydomain.com", and clicked **OK** to join **Client-1** to the domain.
+On the right-hand side, I selected **Rename this PC (advanced)** > **Change**, which opened the **System Properties** window. Under the Computer Name tab, I selected **Change** to modify the computer’s domain membership. I then chose the Domain option, entered "mydomain.com", and clicked **OK** to join **Client-1** to the domain.
 
 <img width="849" height="411" alt="Screenshot 2026-04-11 181635" src="https://github.com/user-attachments/assets/378ec3bd-030e-4533-9661-42ccff34a347" />
 <img width="1187" height="723" alt="Screenshot 2026-04-11 181806" src="https://github.com/user-attachments/assets/07c87cf1-3305-4eb4-90b2-77657e21fe35" />
@@ -123,7 +123,7 @@ By separating administrators, employees, and client systems into distinct contai
 
 **3. Set up Remote Desktop for Non-Administrative Users**
 ---
-Log in to the **Client-1** VM domain admin username `mydomain.com\jane_admin`, and password. Once logged in, I right-clicked the Start menu and selected **System** to open Remote Desktop Settings, then enabled Remote Desktop by selecting “Select users that can remotely access this PC”. In the Object names field, I typed "Domain User" and selected **Check Names** to validate. After confirming, I clicked **OK** to grant all domain users remote access.
+Logged in to the **Client-1** VM using the domain admin username `mydomain.com\jane_admin`, and password. Once logged in, I right-clicked the Start menu and selected **System** to open Remote Desktop Settings, then enabled Remote Desktop by selecting “Select users that can remotely access this PC”. In the Object names field, I typed "Domain User" and selected **Check Names** to validate. After confirming, I clicked **OK** to grant all domain users remote access.
 
 This configuration allows authorized domain users to remotely connect to the client machine using Remote Desktop Protocol (RDP), enabling centralized and flexible access to the system.
 
@@ -141,7 +141,7 @@ You can now log in to Client-1 using a **non-administrative domain user**.
 **4. Create Multiple Users with a Script**
 ---
 
-To simulate a real-world scenario, I automated the creation of multiple user accounts, similar to how an IT administrator would onboard new employees from an HR-provided list. The script creates these accounts in bulk and automatically assigns them to the _EMPLOYEES Organizational Unit. Returning to the Domain Controller, I opened **Windows PowerShell ISE** as **Administrator** to create a new file and paste the provided script (`[script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)`) to generate multiple user accounts. We note that a password is provided within the script `$PASSWORD_FOR_USERS= "Password1"` for all accounts. 
+To simulate a real-world scenario, I automated the creation of multiple user accounts, similar to how an IT administrator would onboard new employees from an HR-provided list. The script creates these accounts in bulk and automatically assigns them to the _EMPLOYEES Organizational Unit. Returning to the Domain Controller, I opened **Windows PowerShell ISE** as **Administrator** to create a new file and paste the provided script (`[script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)`) to generate multiple user accounts. We note that a password is provided within the script (`$PASSWORD_FOR_USERS= "Password1"`) for all accounts. 
 
 <img width="728" height="675" alt="Screenshot 2026-04-11 184416" src="https://github.com/user-attachments/assets/262b828b-9714-43b8-b2fb-5bc058972ba6" />
 <img width="798" height="634" alt="Screenshot 2026-04-11 184647" src="https://github.com/user-attachments/assets/d8b091da-c4e4-4e5b-a6c0-4ff422b8feff" />
